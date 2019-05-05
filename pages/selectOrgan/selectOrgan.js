@@ -2461,7 +2461,8 @@ Page({
     //查询该地区的体检中心信息
     wx.request({
       data: {
-        medicalCenterVO: JSON.stringify(that.data.areacodeList[that.data.multiIndex[1]])
+        citycode: that.data.areacodeList[that.data.multiIndex[1]].citycode,
+        areacode: that.data.areacodeList[that.data.multiIndex[1]].areacode
       },
       url: 'http://localhost:8080/api/wechat/selectOrgan',
       method: 'POST',
@@ -2471,38 +2472,10 @@ Page({
       success: function (res) {
         console.log(res.data);
         var multiArray = [];
-        var cityVOs = res.data.cityCenterVOS;
-        var cityList = [];
-        var firstCityCode = "";
-        //城市name
-        for (var index in cityVOs) {
-          cityList.push(cityVOs[index].cityname);
-          if (index == 0) {
-            firstCityCode = cityVOs[index].citycode;
-          }
-        }
-        //地区信息
-        var areaVos = res.data.areaCenterVOS;
-        var areafirstList = [];
-        var areacodeList = [];
-        for (var i = 0; i < areaVos.length; i++) {
-          //第一个城市的地区信息
-          if (firstCityCode == areaVos[i].citycode) {
-            areafirstList.push(areaVos[i].areaname);
-            areacodeList.push(areaVos[i]);
-          }
-        }
-        //搜索地区显示的数组信息
-        multiArray.push(cityList);
-        multiArray.push(areafirstList);
+        var medicalCenterVOs = res.data.medicalCenterVOs;
         that.setData({
-          multiArray: multiArray,
-          areaVos: areaVos,
-          cityVOs: cityVOs,
-          //地区代码
-          areacodeList: areacodeList
+          medicalCenterVOs: medicalCenterVOs
         });
-        console.log(that.data)
       },
       fail: function (res) {
         wx.showToast({
@@ -2531,5 +2504,16 @@ Page({
           areacodeList: areacodeList
         })
     }
+  },
+  radioChange(e) {
+    const checkedId = e.detail.value
+    that.setData({
+      medicalCenterId: checkedId
+    });
+  },
+  selectOrganDate: function (e) {
+    wx.navigateTo({
+      url: '../selectOrganDate/selectOrganDate?cardcode=' + that.data.cardCode + "&medicalcode=" + that.data.medicalCenterId,
+    })
   }
 })

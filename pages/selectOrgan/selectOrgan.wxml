@@ -5,3 +5,22 @@
     </view>
   </picker>
 </view>
+<view class="section section_gap">
+  <radio-group class="group" bindchange="radioChange">
+    <view class="label-2" wx:for="{{medicalCenterVOs}}">
+    
+      <label class="label-2__text">
+        <text>{{item.medicalecentername}}</text>
+      </label>
+      <label class="label-2__text">
+        <text>{{item.medicalecenteraddress}}</text>
+      </label>
+       <radio
+        id="{{item.id}}"
+        value="{{item.id}}"
+        checked="{{item.checked}}"
+      ></radio>
+    </view>
+  </radio-group>
+</view>
+<button bindtap='selectOrganDate'>确定</button>

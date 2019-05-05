@@ -6,7 +6,8 @@
     "pages/cardInfo/cardInfo",
     "pages/editCardInfo/editCardInfo",
     "pages/setMeal/setMeal",
-    "pages/selectOrgan/selectOrgan"
+    "pages/selectOrgan/selectOrgan",
+    "pages/selectOrganDate/selectOrganDate"
   ],
   "window": {
     "backgroundTextStyle": "light",
