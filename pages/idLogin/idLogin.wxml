@@ -1,0 +1,13 @@
+<view class="container">
+  <view>
+    <navigator url="../index/index" class=''>卡号登陆</navigator>
+    <navigator url="../idLogin/idLogin">身份证登陆</navigator>
+  </view>
+  <form bindsubmit='loginSubmit' bindreset='fromReset'>
+    <view>
+      <input type='text' name='idCard' placeholder='请输入身份证号' />
+      <input type='text' name='password' placeholder='请输入密码' />
+      <button form-type="submit">提交</button>
+    </view>
+  </form>
+</view>

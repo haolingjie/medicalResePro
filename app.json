@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/idLogin/idLogin",
+    "pages/logs/logs",
+    "pages/cardInfo/cardInfo",
+    "pages/editCardInfo/editCardInfo",
+    "pages/setMeal/setMeal",
+    "pages/selectOrgan/selectOrgan"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "体检预约系统",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
