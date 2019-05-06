@@ -8,7 +8,6 @@
 <view class="section section_gap">
   <radio-group class="group" bindchange="radioChange">
     <view class="label-2" wx:for="{{medicalCenterVOs}}">
-    
       <label class="label-2__text">
         <text>{{item.medicalecentername}}</text>
       </label>
@@ -24,3 +23,6 @@
   </radio-group>
 </view>
 <button bindtap='selectOrganDate'>确定</button>
+<loading hidden="{{loadingHidden}}">
+加载中...
+</loading>

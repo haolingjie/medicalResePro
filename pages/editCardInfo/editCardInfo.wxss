@@ -1,1 +1,10 @@
 /* pages/editCardInfo/editCardInfo.wxss */
+input{
+  margin: 5% 0 0 0
+}
+.radio-group{
+  margin: 5% 0 0 0
+}
+button{
+  margin: 5% 0 0 0
+}

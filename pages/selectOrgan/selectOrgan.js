@@ -2392,7 +2392,8 @@ Page({
     // }]
   // },
   data: {
-    multiIndex: [0, 0]
+    multiIndex: [0, 0],
+    loadingHidden:false
   },
   onLoad: function (options) {
     that = this;
@@ -2439,9 +2440,11 @@ Page({
           areaVos: areaVos,
           cityVOs: cityVOs,
           //地区代码
-          areacodeList: areacodeList
+          areacodeList: areacodeList,
+          loadingHidden:true
         });
         console.log(that.data)
+        
       },
       fail: function (res) {
         wx.showToast({
@@ -2515,5 +2518,14 @@ Page({
     wx.navigateTo({
       url: '../selectOrganDate/selectOrganDate?cardcode=' + that.data.cardCode + "&medicalcode=" + that.data.medicalCenterId,
     })
+  },
+  showLoading: function () {
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    });
+  },
+  cancelLoading: function () {
+    wx.hideToast();
   }
 })
