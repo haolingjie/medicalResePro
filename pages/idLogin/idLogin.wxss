@@ -1,1 +1,56 @@
-/* pages/idLogin/idLogin.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.top{
+  width: 100%;
+  height: 40%;
+  background-color:#000066;
+  display: block;
+}
+page{
+  height: 100%;
+}
+.cardLogin{
+  margin-left:20%;
+  display: block; 
+  float: left;
+}
+.idLogin{
+  margin-right:20%;
+  display: block; 
+  float: right;
+}
+.login{
+  width: 100%;
+  margin-top:10%; 
+}
+.formView{
+  margin: auto;
+  width: 60%;
+}
+input{
+  margin: 0 0 5% 0;
+  border: 2rpx solid #1976BB;
+  height: 2rem;
+
+}
+button{
+  border: 1rpx solid #1976BB;
+}

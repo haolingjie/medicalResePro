@@ -8,7 +8,7 @@
     "pages/setMeal/setMeal",
     "pages/selectOrgan/selectOrgan",
     "pages/selectOrganDate/selectOrganDate",
-    "pages/systemHint/systemHint"
+    "pages/browsingCardInfo/browsingCardInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

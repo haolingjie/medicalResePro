@@ -34,7 +34,7 @@ Page({
       fail: function (res) {
         wx.showToast({
           title: '系统错误',
-          icon: 'fail',
+          icon: 'none',
           duration: 2000
         });
 

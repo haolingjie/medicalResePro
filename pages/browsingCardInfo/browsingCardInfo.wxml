@@ -1,0 +1,36 @@
+<form bindsubmit='reservationSubmit'>
+ <input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}' />
+   <text>姓名</text> <input type='text' readonly name='username' value='{{cardInfo.username}}' placeholder='姓名' />
+  <text>性别</text>
+  <radio-group class="radio-group" bindchange="sexRadiochange">
+    <label class="radio">
+      <radio value="1" name='sex' readonly checked="{{cardInfo.sex === '1' ? 'true' : ''}}">男</radio>
+      <radio value="0" name='sex' readonly checked="{{cardInfo.sex === '0' ? 'true' : ''}}">女</radio>
+    </label>
+  </radio-group>
+  <text>身份证</text>
+  <input type='text' name='identitycard' readonly value='{{cardInfo.identitycard}}' placeholder='身份证' />
+  <text>婚姻状况</text>
+  <radio-group class="radio-group" bindchange="maRadioChange">
+    <label class="radio">
+      <radio value="1" name='maritalstatus' readonly checked="{{cardInfo.maritalstatus === '1' ? 'true' : ''}}">已婚</radio>
+      <radio value="0" name='maritalstatus' readonly checked="{{cardInfo.maritalstatus === '0' ? 'true' : ''}}">未婚</radio>
+    </label>
+  </radio-group>
+  <view>
+    <text>体检机构 </text>
+    <text class="text">{{medicalCenterVO.medicalecentername}}</text>
+  </view>
+  <view>
+    <text>体检地点 </text>
+    <text class="text">{{medicalCenterVO.medicalecenteraddress}}</text>
+  </view>
+  <view class="section">
+        体检日期: {{cardInfo.medicaldateStr}}
+  </view>
+  <text>联系方式</text>
+  <input type='text' name='phobenumber' readonly value='{{cardInfo.phobenumber}}' placeholder='联系方式' />
+  <text>体检报告寄送地址</text>
+  <input type='text' name='sendaddress' readonly value='{{cardInfo.sendaddress}}' placeholder='体检报告寄送地址' />
+  <button form-type="submit">预约确认</button>
+</form>

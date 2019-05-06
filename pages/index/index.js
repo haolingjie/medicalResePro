@@ -65,18 +65,54 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function(res) {
-        res.data.cardList;
-        wx.navigateTo({
-          url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(res.data.cardList)
-        })
+        var cardInfo = res.data.cardList[0];
+        if(res.data.code == 0){
+          //0：未激活
+          if (cardInfo.cardstatus == '0'){
+            wx.showToast({
+              title: '该卡片未激活',
+              icon: 'none',
+              duration: 2000
+            });
+           //1：已激活 
+          } else if (cardInfo.cardstatus == '1'){
+            wx.navigateTo({
+              url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(res.data.cardList)
+            });
+            //2已预购
+          } else if (cardInfo.cardstatus == '2') {
+            wx.navigateTo({
+              url: '../browsingCardInfo/browsingCardInfo?cardcode=' + cardInfo.cardcode + "&medicalcode=" + cardInfo.medicalcode,
+            });
+            //3已到检
+          } else if (cardInfo.cardstatus == '3') {
+            wx.showToast({
+              title: '已体检成功，等待寄送体检报告',
+              icon: 'none',
+              duration: 2000
+            });
+            //4：已过期   
+          } else if (cardInfo.cardstatus == '4') {
+            wx.showToast({
+              title: '该卡片已过期',
+              icon: 'none',
+              duration: 2000
+            });
+          } 
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          });
+        }
       },
       fail:function(res){
         wx.showToast({
           title: '系统错误',
-          icon: 'fail',
+          icon: 'none',
           duration: 2000
         });
-
       },
     })
   }
