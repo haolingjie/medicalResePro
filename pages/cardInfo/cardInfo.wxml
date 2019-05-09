@@ -1,27 +1,39 @@
+<wxs module="util" src="../../utils/util.wxs"></wxs>
 <view class="table">
   <view class="tr bg-w">
     <view class="th">序号</view>
     <view class="th">卡号</view>
     <view class="th">套餐</view>
-     <view class="th">状态</view>
+    <view class="th">状态</view>
   </view>
   <scroll-view scroll-y='true'></scroll-view>
-  <block wx:for="{{cardInfo}}" wx:key="{{code}}"> 
-    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+  <block wx:for="{{cardInfo}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap="gotoCardInfo" data-cardcode='{{item.cardcode}}' data-cardstatus='{{item.cardstatus}}'>
+      <view class="td">{{index+1}}</view>
       <view class="td">{{item.cardcode}}</view>
-      <view class="td">{{item.cardcode}}</view>
-      <view class="td">  </view>
-      <view class="td">{{item.cardstatus}}</view>
-
+      <view class="td">{{util.Sub(item.cardcode,0,1)}} </view>
+      <view class="td">
+        <text class="input-item" wx:if="{{item.cardstatus === '0'}}">未激活</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '1'}}">已激活</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '2'}}">已预约</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '3'}}">已到检</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '4'}}">已过期</text>
+        <text class="input-item" wx:else>{{item.cardstatus}}</text>
+      </view>
     </view>
-    <view class="tr" wx:else>
+    <view class="tr" wx:else bindtap="gotoCardInfo" data-cardcode='{{item.cardcode}}'  data-cardstatus='{{item.cardstatus}}'>
+      <view class="td">{{index+1}}</view>
       <view class="td">{{item.cardcode}}</view>
-      <view class="td">{{item.cardcode}}</view>
-      <view class="td">  </view>
-      <view class="td">{{item.cardstatus}}</view>
-
+      <view class="td">{{util.Sub(item.cardcode,0,1)}} </view>
+      <view class="td">
+        <text class="input-item" wx:if="{{item.cardstatus === '0'}}">未激活</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '1'}}">已激活</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '2'}}">已预约</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '3'}}">已到检</text>
+        <text class="input-item" wx:elif="{{item.cardstatus === '4'}}">已过期</text>
+        <text class="input-item" wx:else>{{item.cardstatus}}</text>
+      </view>
     </view>
   </block>
-  <button >返回上级</button>
-  <button>确定</button>
+  <button bindtap='gotoLogin'>确定</button>
 </view>

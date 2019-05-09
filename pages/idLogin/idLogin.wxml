@@ -10,10 +10,10 @@
     <!-- </view> -->
   </view>
   <view class='formView'>
-    <form bindsubmit='loginSubmit' bindreset='fromReset'>
+    <form bindsubmit='submitForm' bindreset='fromReset'>
       <view >
-        <input type='text'  name='idCard'  value='123456789123456789' placeholder='请输入身份证号码' />
-        <input type='password' name='password' value='456789' placeholder='请输入密码' />
+        <input type='text'  name='idcard'  value='142625199406174312' placeholder='请输入身份证号码' />
+        <input type='password' name='password' value='174312' placeholder='请输入密码' />
         <button form-type="submit">提交</button>
       </view>
     </form>
