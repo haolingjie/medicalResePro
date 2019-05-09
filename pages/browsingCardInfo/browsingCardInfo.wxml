@@ -1,30 +1,41 @@
-<input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}'/>
-<view>
-  <text>姓名：{{cardInfo.username}}</text>
-</view>
-<view>
-  <text wx:if="{{cardInfo.sex === '1'}}">性别：男</text>
-  <text wx:else>性别：女 </text>
-</view>
-<view>
-  <text>身份证：{{cardInfo.identitycard}}</text>
-</view>
-<view>
-  <text wx:if="{{cardInfo.maritalstatus === '1'}}">婚姻状况：已婚</text>
-  <text wx:else>婚姻状况：未婚</text>
-</view>
-<view>
-  <text>体检机构：{{medicalCenterVO.medicalecentername}}</text>
-</view>
-<view>
-  <text>体检地点：{{medicalCenterVO.medicalecenteraddress}} </text>
-</view>
-<view>
-  体检日期: {{cardInfo.medicaldateStr}}
-</view>
-<view>
-  <text>联系方式：{{cardInfo.phobenumber}}</text>
-</view>
-<view>
-  <text>体检报告寄送地址：{{cardInfo.sendaddress}}</text>
+<input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}' />
+<view class='sure-page'>
+  <view class='name-input'>
+    <text class='name-dec'>姓名</text>
+    <text class="input-item">{{cardInfo.username}}</text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>性别</text>
+    <text class="input-item" wx:if="{{cardInfo.sex === '1'}}">男</text>
+    <text class="input-item" wx:else>女 </text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>身份证</text>
+    <text class="input-item">{{cardInfo.identitycard}}</text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>婚姻状况</text>
+    <text class="input-item" wx:if="{{cardInfo.maritalstatus === '1'}}">已婚</text>
+    <text class="input-item" wx:else>未婚</text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>体检机构</text>
+    <text class="input-item">{{medicalCenterVO.medicalecentername}}</text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>体检地点</text>
+    <text class="input-item">{{medicalCenterVO.medicalecenteraddress}}</text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>体检日期</text>
+    <text class="input-item">{{cardInfo.medicaldateStr}}</text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>联系方式</text>
+    <text class="input-item">{{cardInfo.phobenumber}}</text>
+  </view>
+  <view class='name-input'>
+    <text class='name-dec'>体检报告寄送地址</text>
+    <text class="input-item">{{cardInfo.sendaddress}}</text>
+  </view>
 </view>

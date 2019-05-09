@@ -1,6 +1,6 @@
 .label-1,
 .label-2 {
-  margin-bottom: 15px;
+  margin-bottom: 15rpx;
 }
 .label-1__text,
 .label-2__text {
@@ -10,20 +10,20 @@
 
 .label-1__icon {
   position: relative;
-  margin-right: 10px;
+  margin-right: 10rpx;
   display: inline-block;
   vertical-align: middle;
-  width: 18px;
-  height: 18px;
+  width: 18rpx;
+  height: 18rpx;
   background: #fcfff4;
 }
 
 .label-1__icon-checked {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 12px;
-  height: 12px;
+  top: 3rpx;
+  left: 3rpx;
+  width: 12rpx;
+  height: 12rpx;
   background: #1aad19;
 }
 
@@ -31,27 +31,33 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  margin-right: 10px;
-  width: 18px;
-  height: 18px;
+  margin-right: 10rpx;
+  width: 18rpx;
+  height: 18rpx;
   background: #fcfff4;
-  border-radius: 50px;
+  border-radius: 50rpx;
 }
 
 .label-2__icon-checked {
   position: absolute;
-  left: 3px;
-  top: 3px;
-  width: 12px;
-  height: 12px;
+  left: 3rpx;
+  top: 3rpx;
+  width: 12rpx;
+  height: 12rpx;
   background: #1aad19;
   border-radius: 50%;
 }
 
 .label-4_text {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 15rpx;
 }
 .section{
   margin: 0 0 5% 0
+}
+
+.sure-page {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 32px;
 }

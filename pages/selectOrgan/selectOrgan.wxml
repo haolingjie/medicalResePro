@@ -1,4 +1,4 @@
-<view class="section">
+<view class="sure-page">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
       机构地区选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
@@ -21,8 +21,8 @@
       ></radio>
     </view>
   </radio-group>
-</view>
-<button bindtap='selectOrganDate'>确定</button>
-<loading hidden="{{loadingHidden}}">
+  <button bindtap='selectOrganDate'>确定</button>
+  <loading hidden="{{loadingHidden}}">
 加载中...
 </loading>
+</view>

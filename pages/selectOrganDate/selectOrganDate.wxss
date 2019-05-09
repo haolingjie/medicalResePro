@@ -1,6 +1,46 @@
-.section{
-   background:#CABBC7;
-   margin:20rpx;
-   padding:20rpx
+.sure-page {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 32px;
+}
 
+.name-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 2rem;
+  margin-bottom: 32rpx;
+}
+.input-item {
+  flex: 1;
+  height: 38rpx;
+  margin-left: 10px;
+  line-height: 38rpx;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #1976BB;
+   font-size: 30rpx;
+}
+.sex-item {
+  margin-bottom: 32rpx;
+}
+
+.name-dec, .sex-item text {
+  font-size: 30rpx;
+}
+
+
+.sex-item {
+  margin-top: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.radio-sex radio {
+
+  font-size: 30rpx;
+}
+.radio-one {
+  padding-left: 20rpx;
+  margin-right: 32px;
 }
