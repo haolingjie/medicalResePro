@@ -6,18 +6,20 @@
      <view class="th">状态</view>
   </view>
   <scroll-view scroll-y='true'></scroll-view>
-  <block wx:for="{{listData}}" wx:key="{{code}}">
+  <block wx:for="{{cardInfo}}" wx:key="{{code}}"> 
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
-       <view class="td">{{item.type}}</view>
+      <view class="td">{{item.cardcode}}</view>
+      <view class="td">{{item.cardcode}}</view>
+      <view class="td">  </view>
+      <view class="td">{{item.cardstatus}}</view>
+
     </view>
     <view class="tr" wx:else>
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
-       <view class="td">{{item.type}}</view>
+      <view class="td">{{item.cardcode}}</view>
+      <view class="td">{{item.cardcode}}</view>
+      <view class="td">  </view>
+      <view class="td">{{item.cardstatus}}</view>
+
     </view>
   </block>
   <button >返回上级</button>

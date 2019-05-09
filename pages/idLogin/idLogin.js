@@ -66,8 +66,8 @@ Page({
   loginSubmit: function (e) {
     wx.request({
       data: {
-        'idCard': e.detail.value.idCard,
-        'password': e.detail.value.password,
+        'identityCard': e.detail.value.idCard,
+        'passWord': e.detail.value.password,
         'loginMethod': '2'
       },
       url: 'http://localhost:8080/api/wechat/login',
@@ -78,7 +78,7 @@ Page({
       success: function (res) {
         console.log(res.data);
         wx.navigateTo({
-          url: '../cardInfo/cardInfo?user_id=111'
+          url: "../cardInfo/cardInfo?cardList=" + JSON.stringify(res.data.cardList)
         })
       },
       fail: function (res) {
