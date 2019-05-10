@@ -3,7 +3,9 @@
   margin: 0 auto;
   margin-top: 32px;
 }
-
+.important {
+  display: inline-block !important;
+}
 .name-input {
   display: flex;
   align-items: center;

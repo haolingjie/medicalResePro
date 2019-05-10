@@ -1,2 +1,4 @@
+<view class='"sure-page"'>
 <view data-url="http://localhost/20190427-医疗预约卡信息." data-type="excel" catchtap='downloadFile'></view>
 <button bindtap='selectOrgan'>确定</button>
+</view>

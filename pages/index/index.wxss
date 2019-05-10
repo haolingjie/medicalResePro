@@ -50,6 +50,8 @@ input{
   margin: 0 0 5% 0;
   border: 2rpx solid #1976BB;
   height: 2rem;
+  padding-left: 20rpx;
+  
 }
 button{
   border: 1rpx solid #1976BB;

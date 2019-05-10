@@ -23,8 +23,8 @@
   <view class='formView'>
     <form bindsubmit='loginSubmit' bindreset='fromReset'>
       <view >
-        <input type='text'  name='idCard' value='A10001745' placeholder='请输入卡号' />
-        <input type='password' name='password' value='Q1O4iqLq' placeholder='请输入密码' />
+        <input type='text'  name='idCard' value='A10000410' placeholder='请输入卡号' />
+        <input type='password' name='password' value='fjP8X0Wm' placeholder='请输入密码' />
         <button form-type="submit">提交</button>
       </view>
     </form>

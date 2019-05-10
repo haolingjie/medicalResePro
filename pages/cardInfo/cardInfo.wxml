@@ -1,5 +1,5 @@
 <wxs module="util" src="../../utils/util.wxs"></wxs>
-<view class="table">
+<view class="table sure-page">
   <view class="tr bg-w">
     <view class="th">序号</view>
     <view class="th">卡号</view>

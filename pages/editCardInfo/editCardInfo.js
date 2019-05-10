@@ -14,8 +14,10 @@ Page({
    */
   onLoad: function (options) {
     var cardList = JSON.parse(options.cardList);
+    var openId = options.openId;
     this.setData({
-      cardInfo:cardList[0]
+      cardInfo:cardList[0],
+      openId: openId,
     });
     this.initValidate();
   },
@@ -87,6 +89,7 @@ Page({
         'identitycard': param.idcard,
         'sex': this.data.cardInfo.sex,
         'maritalstatus': this.data.cardInfo.maritalstatus,
+        'openId': this.data.openId,
         'sendaddress': param.sendaddress,
         'phobenumber': param.tel
       },

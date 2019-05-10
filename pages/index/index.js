@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var that;
 Page({
   data: {
     motto: 'Hello World',
@@ -42,11 +42,41 @@ Page({
         }
       })
     }
+    that = this;
+    // 登录
+    wx.login({
+      success: function (res) {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          data: {
+            'code': res.code,
+          },
+          url: 'http://localhost:8080/api/wechat/wxLogin',
+          method: 'GET',
+          header: {
+            'Content-Type': 'application/json'
+          },
+          success: function (res) {
+            that.setData({
+              openId: res.data.openid,
+            });
+          },
+          fail: function (res) {
+            wx.showToast({
+              title: '系统错误',
+              icon: 'none',
+              duration: 2000
+            });
+          },
+        })
+      }
+    })
+    
   },
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
-    this.setData({
+    that.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
@@ -57,7 +87,7 @@ Page({
       data:{
         'cardCode': e.detail.value.idCard,
         'passWord': e.detail.value.password,
-        'loginMethod': '1'
+        'loginMethod': '1',
       },
       url: 'http://localhost:8080/api/wechat/login',
       method: 'POST',
@@ -77,7 +107,7 @@ Page({
            //1：已激活 
           } else if (cardInfo.cardstatus == '1'){
             wx.navigateTo({
-              url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(res.data.cardList)
+              url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(res.data.cardList) + "&openId=" + that.data.openId,
             });
             //2已预购
           } else if (cardInfo.cardstatus == '2') {

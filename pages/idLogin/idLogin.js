@@ -1,6 +1,6 @@
 // pages/idLogin/idLogin.js
 import WxValidate from '../../assets/plugins/wx-validate/WxValidate'
-
+var that;
 Page({
 
   /**
@@ -15,6 +15,35 @@ Page({
    */
   onLoad: function (options) {
     this.initValidate();
+    // 登录
+    wx.login({
+      success: function (res) {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          data: {
+            'code': res.code,
+          },
+          url: 'http://localhost:8080/api/wechat/wxLogin',
+          method: 'GET',
+          header: {
+            'Content-Type': 'application/json'
+          },
+          success: function (res) {
+            this.setData({
+              openId: res.data.openId,
+            });
+          },
+          fail: function (res) {
+            wx.showToast({
+              title: '系统错误',
+              icon: 'none',
+              duration: 2000
+            });
+          },
+        })
+      }
+    })
+    that=this;
   },
 
   /**
@@ -70,7 +99,7 @@ Page({
       data: {
         'identityCard': e.detail.value.idcard,
         'passWord': e.detail.value.password,
-        'loginMethod': '2'
+        'loginMethod': '2',
       },
       url: 'http://localhost:8080/api/wechat/login',
       method: 'POST',
@@ -80,7 +109,7 @@ Page({
       success: function (res) {
         if (res.data.code =='0'){
           wx.navigateTo({
-            url: "../cardInfo/cardInfo?cardList=" + JSON.stringify(res.data.cardList)
+            url: "../cardInfo/cardInfo?cardList=" + JSON.stringify(res.data.cardList) + "&openId=" +that.data.openId,
           });
         }else {
           wx.showToast({

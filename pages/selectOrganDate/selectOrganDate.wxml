@@ -1,4 +1,4 @@
-<form bindsubmit='submitForm'>
+<form bindsubmit='submitForm' report-submit='true'>
   <view class='sure-page'>
     <input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}' />
     <view class='name-input'>
@@ -36,9 +36,13 @@
       <text class="input-item">{{medicalCenterVO.medicalecenteraddress}}</text>
     </view>
     <!-- <view class='name-input'> -->
-      <picker mode="date" class='name-input' value="{{date}}" start="2019-05-05" end="2050-1-23" bindchange="bindDateChange">
-        <text class='name-dec'>体检日期</text>
-        <input class="input-item" type='text' name='medicaldate' value='{{dates}}'/>
+      <picker mode="date" value="{{date}}" start="2019-05-05" end="2050-1-23" bindchange="bindDateChange">
+        <view class="name-input">
+          <label class='name-dec'>体检日期</label>
+          <view class="input-item">{{dates}}</view>
+        </view>
+        <!-- <text class='name-dec'>体检日期</text>
+        <input class="input-item important"type='text' c value='{{dates}}'/> -->
       </picker>
     <!-- </view> -->
     <view class='name-input'>
