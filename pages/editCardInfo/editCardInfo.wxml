@@ -1,5 +1,5 @@
 <view  class='sure-page'>
-  <form bindsubmit='submitForm'>
+  <form bindsubmit='submitForm' report-submit='true'>
     <view class='name-input'>
       <input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}' placeholder-class='placeholder' />
     </view>

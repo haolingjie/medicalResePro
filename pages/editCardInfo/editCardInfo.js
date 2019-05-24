@@ -1,5 +1,7 @@
 // pages/editCardInfo/editCardInfo.js
 import WxValidate from '../../assets/plugins/wx-validate/WxValidate'
+var utils = require('../../utils/util.js')
+
 Page({
 
   /**
@@ -180,6 +182,8 @@ Page({
     /*** 这里添写验证成功以后的逻辑**/
 
     //验证通过以后->
+    let formId = e.detail.formId;
+    utils.collectFormIds(formId); //保存推送码
     this.editCardInfoSubmit(params);
   },
   showModal(error) {

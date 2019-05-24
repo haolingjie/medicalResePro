@@ -1,6 +1,9 @@
 // pages/selectOrganDate/selectOrganDate.js
 import WxValidate from '../../assets/plugins/wx-validate/WxValidate'
 var that;
+const app = getApp();
+var utils = require('../../utils/util.js')
+
 Page({
 
   /**
@@ -29,7 +32,9 @@ Page({
       success: function (res) {
         that.setData({
           cardInfo: res.data.cardInfoVo,
-          medicalCenterVO: res.data.medicalCenterVO
+          medicalCenterVO: res.data.medicalCenterVO,
+          startDate: res.data.startDate,
+          endDate: res.data.endDate,
         });
       },
       fail: function (res) {
@@ -99,6 +104,13 @@ Page({
     })
   },
   reservationSubmit: function (e) {
+    let formId = e.detail.formId;
+    utils.collectFormIds(formId); //保存推送码
+    var formIds = app.globalData.globalFormIds; // 获取全局推送码
+    if (formIds.length) {
+      formIds = JSON.stringify(formIds); // 转换成JSON字符串
+      app.globalData.gloabalFomIds = ''; // 清空当前全局推送码
+    }
     wx.request({
       data: {
         'cardcode': e.detail.value.cardcode,
@@ -111,6 +123,7 @@ Page({
         'medicaldateStr': that.data.cardInfo.medicaldateStr,
         'medicaldate': e.detail.value.medicaldate,
         'medicalcode': that.data.medicalCenterVO.id,
+        'formIds': formIds,
       },
       url: 'http://localhost:8080/api/wechat/reservationSubmit',
       method: 'POST',
