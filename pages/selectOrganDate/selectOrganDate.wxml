@@ -37,15 +37,12 @@
         <text class="input-item">{{medicalCenterVO.medicalecenteraddress}}</text>
       </view>
       <!-- <view class='name-input'> -->
-      <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
-        <view class="name-input">
+      <view class="name-input">
           <label class='name-dec'>体检日期</label>
-          <input class="input-item" name='medicaldate' value='{{dates}}' />
+          <input class="input-item" name='medicaldate' value='{{dates}}' hidden />
         </view>
-        <!-- <text class='name-dec'>体检日期</text>
-        <input class="input-item important"type='text' c value='{{dates}}'/> -->
-      </picker>
-      <!-- </view> -->
+      <calendar weeks-type="cn" days-color="{{selectOrageDates}}"  bindprevMonth="prevMonth" bindnextMonth="nextMonth" binddateChange="dateChange" binddayClick="dayClick" calendar-style="calendar" />
+      <!-- <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange"> -->
       <view class='name-input'>
         <text class='name-dec'>联系方式</text>
         <input class="input-item" type='text' name='tel' value='{{cardInfo.phobenumber}}' placeholder='联系方式' />

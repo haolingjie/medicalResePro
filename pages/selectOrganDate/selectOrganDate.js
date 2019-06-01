@@ -3,7 +3,7 @@ import WxValidate from '../../assets/plugins/wx-validate/WxValidate'
 var that;
 const app = getApp();
 var utils = require('../../utils/util.js')
-
+var selectOrageDates=new Array;
 Page({
 
   /**
@@ -30,11 +30,19 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
+        var curCanDateList = res.data.curCanDateList;
+        for (var i = 0; i < curCanDateList.length; i++) {
+          selectOrageDates.push({
+            month: 'current', day: curCanDateList[i], color: 'black', background: ''
+          });
+        }
         that.setData({
           cardInfo: res.data.cardInfoVo,
           medicalCenterVO: res.data.medicalCenterVO,
           startDate: res.data.startDate,
           endDate: res.data.endDate,
+          selectOrageDates: selectOrageDates,
+          allOrageDates: res.data.allOrageDates,
         });
       },
       fail: function (res) {
@@ -47,6 +55,8 @@ Page({
       },
     });
     this.initValidate();
+   
+    
   },
 
   /**
@@ -236,7 +246,7 @@ Page({
     const params = e.detail.value
     if (!this.WxValidate.checkForm(params)) {
       const error = this.WxValidate.errorList[0]
-      this.showModal(error)
+      this.showModal(error.msg)
       return false
     }
     /*** 这里添写验证成功以后的逻辑**/
@@ -244,10 +254,63 @@ Page({
     //验证通过以后->
     this.reservationSubmit(e);
   },
-  showModal(error) {
+  showModal(msg) {
     wx.showModal({
-      content: error.msg,
+      content: msg,
       showCancel: false,
     })
+  },
+  prevMonth: function (event) {
+    console.log(event.detail);
+    this.setSelectOrageDates(event);
+  },
+  nextMonth: function (event) {
+    this.setSelectOrageDates(event);
+  },
+  dateChange: function (event) {
+    this.setSelectOrageDates(event);
+  },
+  dayClick: function (event) {
+    console.log(event.detail);
+    var dates="";
+    var selectOrageDates=that.data.selectOrageDates;
+    for (var i = 0; i < selectOrageDates.length; i++) {
+      if (event.detail.color == "#4a4f74"){
+        this.showModal("该日期不可选");
+        return;
+      }
+      if (event.detail.day == selectOrageDates[i].day){
+        selectOrageDates[i].background ='#b49eeb';
+        var month = event.detail.month+"";
+        if (month.length < 2) {
+          month = "0" + month;
+        }
+        var day = event.detail.day + "";
+        if(day.length <2){
+          day = "0" + day;
+        }
+        dates = event.detail.year + "-" + month + "-"+ day;
+      }else{
+        selectOrageDates[i].background = ''
+      }
+    }
+    that.setData({
+      selectOrageDates: selectOrageDates,
+      dates: dates,
+    });
+  },
+  setSelectOrageDates: function (event){
+    selectOrageDates = [];
+    var allOrageDates = that.data.allOrageDates;
+    for (var i = 0; i < allOrageDates.length; i++) {
+      if (event.detail.currentMonth == allOrageDates[i].month && event.detail.currentYear == allOrageDates[i].year)       {
+        selectOrageDates.push({
+          month: 'current', day: allOrageDates[i].day, color: 'black', background: '',
+        });
+      }
+    }
+    that.setData({
+      selectOrageDates: selectOrageDates,
+    });
   }
 })

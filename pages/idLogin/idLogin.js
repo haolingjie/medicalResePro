@@ -14,7 +14,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.initValidate();
+    that = this;
+    that.initValidate();
+   
     // 登录
     wx.login({
       success: function (res) {
@@ -29,7 +31,7 @@ Page({
             'Content-Type': 'application/json'
           },
           success: function (res) {
-            this.setData({
+            that.setData({
               openId: res.data.openId,
             });
           },
@@ -43,7 +45,7 @@ Page({
         })
       }
     })
-    that=this;
+    
   },
 
   /**
@@ -145,25 +147,25 @@ Page({
     };
 
     // 创建实例对象
-    this.WxValidate = new WxValidate(rules, messages)
+    that.WxValidate = new WxValidate(rules, messages)
 
     /*** 也可以自定义验证规则*/
-    this.WxValidate.addMethod('assistance', (value, param) => {
-      return this.WxValidate.optional(value) || (value.length >= 1 && value.length <= 2)
+    that.WxValidate.addMethod('assistance', (value, param) => {
+      return that.WxValidate.optional(value) || (value.length >= 1 && value.length <= 2)
     }, '请勾选 《顺风男服务协议》')
   },
   submitForm(e) {
     /***4-3(表单提交校验)*/
     const params = e.detail.value
-    if (!this.WxValidate.checkForm(params)) {
-      const error = this.WxValidate.errorList[0]
-      this.showModal(error)
+    if (!that.WxValidate.checkForm(params)) {
+      const error = that.WxValidate.errorList[0]
+      that.showModal(error)
       return false
     }
     /*** 这里添写验证成功以后的逻辑**/
 
     //验证通过以后->
-    this.loginSubmit(e);
+    that.loginSubmit(e);
   },
   showModal(error) {
     wx.showModal({
