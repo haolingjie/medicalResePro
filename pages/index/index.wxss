@@ -1,11 +1,4 @@
-.container{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
+.containerr{
   background-color: rgba(217, 219, 220, 0.2);
 }
 .Corporatelogo{
@@ -51,4 +44,18 @@
   margin-top: 20px;
   color: #fff;
   background-color: #4B78F6;
+}
+.cardLogin{
+  margin-top: 10px;
+  margin-left: 10%;
+  color: #545454;
+  display: block;
+  float: left;
+}
+.idLogin{
+  margin-top: 10px;
+  margin-right: 10%;
+  display: block;
+  color: #545454;
+  float: right;
 }

@@ -41,8 +41,7 @@
           <label class='name-dec'>体检日期</label>
           <input class="input-item" name='medicaldate' value='{{dates}}' hidden />
         </view>
-      <calendar weeks-type="cn" days-color="{{selectOrageDates}}"  bindprevMonth="prevMonth" bindnextMonth="nextMonth" binddateChange="dateChange" binddayClick="dayClick" calendar-style="calendar" />
-      <!-- <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange"> -->
+      
       <view class='name-input'>
         <text class='name-dec'>联系方式</text>
         <input class="input-item" type='text' name='tel' value='{{cardInfo.phobenumber}}' placeholder='联系方式' />
@@ -53,6 +52,10 @@
       </view>
       <button form-type="submit" hidden>预约确认</button>
     </form>
-    <button form-type="submit">预约确认</button>
+    <button form-type="submit" class='Confirm'>预约确认</button>
   </form>
+  <!--选择日期插件-->
+  <view class='selectDate'>
+    <calendar weeks-type="cn" days-color="{{selectOrageDates}}"  bindprevMonth="prevMonth" bindnextMonth="nextMonth" binddateChange="dateChange" binddayClick="dayClick"  class='date' calendar-style="calendar" />
+  </view>
 </view>

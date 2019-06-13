@@ -10,6 +10,7 @@
   justify-content: flex-start;
   height: 2rem;
   margin-bottom: 32rpx;
+  border-bottom: 1px solid rgba(217, 219, 220, 0.8);
 }
 .input-item {
   flex: 1;
@@ -17,7 +18,7 @@
   margin-left: 10px;
   line-height: 38rpx;
   padding-left: 20rpx;
-  border-bottom: 1px solid #1976BB;
+  /* border-bottom: 1px solid #1976BB; */
    font-size: 30rpx;
 }
 .sex-item {
@@ -26,6 +27,7 @@
 
 .name-dec, .sex-item text {
   font-size: 30rpx;
+  width: 50px;
 }
 
 

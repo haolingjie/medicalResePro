@@ -1,7 +1,9 @@
 .sure-page {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   margin-top: 32px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .important {
   display: inline-block !important;
@@ -12,6 +14,7 @@
   justify-content: flex-start;
   height: 2rem;
   margin-bottom: 32rpx;
+  border-bottom: 1px solid rgba(217, 219, 220, 0.8);
 }
 .input-item {
   flex: 1;
@@ -19,7 +22,6 @@
   margin-left: 10px;
   line-height: 38rpx;
   padding-left: 20rpx;
-  border-bottom: 1px solid #1976BB;
    font-size: 30rpx;
 }
 .sex-item {
@@ -28,6 +30,7 @@
 
 .name-dec, .sex-item text {
   font-size: 30rpx;
+  width: 80px;
 }
 
 
@@ -49,4 +52,12 @@
 .calendar{
     border-radius: 15px;
     border:1px solid #1976BB;
+}
+.Confirm{
+   background-color: #1AAD19; 
+   color: #ffffff;
+}
+.selectDate{
+  display: none;
+  margin: 0spx 0px 0px 0px;
 }

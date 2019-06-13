@@ -38,4 +38,7 @@
     <text class='name-dec'>体检报告寄送地址</text>
     <text class="input-item">{{cardInfo.sendaddress}}</text>
   </view>
+  <view>
+     <calendar weeks-type="cn" days-color="{{selectOrageDates}}"  bindprevMonth="prevMonth" bindnextMonth="nextMonth" binddateChange="dateChange" binddayClick="dayClick" calendar-style="calendar" />
+  </view>
 </view>
