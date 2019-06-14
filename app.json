@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/editCardInfo-two/editCardInfo-two",
     "pages/browsingCardInfo/browsingCardInfo",
+    "pages/index/index",
     "pages/selectOrganDate/selectOrganDate",
     "pages/selectOrgan/selectOrgan",
     "pages/editCardInfo/editCardInfo",

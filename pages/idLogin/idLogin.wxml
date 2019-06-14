@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="containerr">
   <view class='Corporatelogo'>
-    
+    <image class="Medical-logo" src="../../assets/images/appointment.jpg"></image> 
   </view>
    <!--表单-->
   <form class='Medical-form' bindsubmit='loginSubmit' bindreset='fromReset' >

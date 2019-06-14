@@ -2,9 +2,9 @@
 .Corporatelogo{
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 200px;
+  height: 250px;
   width: 100%;
-  background-color: #4B78F6;
+  /* background-color: #4B78F6; */
 }
 .Medical-form{
   width: 100%;
@@ -41,7 +41,7 @@
   width: 90%;
   margin-top: 20px;
   color: #fff;
-  background-color: #4B78F6;
+  background-color: #008CD4;
 }
 .cardLogin{
   margin-top: 10px;
@@ -56,4 +56,8 @@
   display: block;
   color: #545454;
   float: right;
+}
+.Medical-logo{
+  width: 100%; 
+  height: 100%;
 }
