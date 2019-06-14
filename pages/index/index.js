@@ -98,12 +98,27 @@ Page({
         var cardInfo = res.data.cardList[0];
         if(res.data.code == 0){
           //0：未激活
-          if (cardInfo.cardstatus == '0'){
-            wx.showToast({
-              title: '该卡片未激活',
-              icon: 'none',
-              duration: 2000
+          if (cardInfo.cardstatus == '0' || cardInfo.cardstatus == '4'){
+            //发送消息给后台
+            wx.request({
+              data: {
+                'cardcode': cardInfo.cardcode,
+                'cardstatus': cardInfo.cardstatus,
+              },
+              url: 'http://localhost:8080/api/wechat/activateCard',
+              method: 'POST',
+              header: {
+                'Content-Type': 'application/json'
+              },
+              success: function (res) {
+                that.showModal(res.data.msg);
+              }
             });
+            // wx.showToast({
+            //   title: '该卡片未激活',
+            //   icon: 'none',
+            //   duration: 2000
+            // });
            //1：已激活 
           } else if (cardInfo.cardstatus == '1'){
             wx.navigateTo({
@@ -122,13 +137,14 @@ Page({
               duration: 2000
             });
             //4：已过期   
-          } else if (cardInfo.cardstatus == '4') {
-            wx.showToast({
-              title: '该卡片已过期',
-              icon: 'none',
-              duration: 2000
-            });
-          } 
+          }
+          //  else if (cardInfo.cardstatus == '4') {
+          //   wx.showToast({
+          //     title: '该卡片已过期',
+          //     icon: 'none',
+          //     duration: 2000
+          //   });
+          // } 
         }else{
           wx.showToast({
             title: res.data.msg,
@@ -145,5 +161,11 @@ Page({
         });
       },
     })
+  },
+  showModal(msg) {
+    wx.showModal({
+      content: msg,
+      showCancel: false,
+    });
   }
 })
