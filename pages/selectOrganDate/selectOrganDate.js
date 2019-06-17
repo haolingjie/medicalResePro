@@ -10,7 +10,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    sex: [
+      { name: '男', number: '1', },
+      { name: '女', number: '0', }
+    ],
+    marriage: [
+      { name: '已婚', number: '1', },
+      { name: '未婚', number: '0', }
+    ],
   },
 
   /**
@@ -275,12 +282,12 @@ Page({
     var dates="";
     var selectOrageDates=that.data.selectOrageDates;
     for (var i = 0; i < selectOrageDates.length; i++) {
-      if (event.detail.color == "#4a4f74"){
+      if (event.detail.color == "#2facff"){
         this.showModal("该日期不可选");
         return;
       }
       if (event.detail.day == selectOrageDates[i].day){
-        selectOrageDates[i].background ='#b49eeb';
+        selectOrageDates[i].background ='#2facff';
         var month = event.detail.month+"";
         if (month.length < 2) {
           month = "0" + month;

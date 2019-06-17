@@ -1,6 +1,16 @@
 /* pages/setMeal/setMeal.wxss */
+page {
+  background-color: #F7F7F8;
+} 
+
 .sure-page {
   width: 80%;
   margin: 0 auto;
   margin-top: 32px;
+}
+.Medical-loginBtn{
+  width: 90%;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #008CD4;
 }

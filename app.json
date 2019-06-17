@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/editCardInfo-two/editCardInfo-two",
-    "pages/browsingCardInfo/browsingCardInfo",
     "pages/index/index",
     "pages/selectOrganDate/selectOrganDate",
-    "pages/selectOrgan/selectOrgan",
+    "pages/browsingCardInfo-two/index",
+    "pages/browsingCardInfo/browsingCardInfo",
     "pages/editCardInfo/editCardInfo",
+    "pages/selectOrgan/selectOrgan",
     "pages/cardInfo/cardInfo",
     "pages/logs/logs",
+    "pages/setMeal/setMeal",
     "pages/idLogin/idLogin"
   ],
   "window": {

@@ -1,36 +1,97 @@
-<view  class='sure-page'>
-  <form bindsubmit='submitForm' report-submit='true'>
-    <view class='name-input'>
-      <input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}' placeholder-class='placeholder' />
+<!--index.wxml-->
+<view class="containerr">
+
+<form class='medical-from' bindsubmit='submitForm' report-submit='true'>
+<input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}' placeholder-class='placeholder' />
+<i-panel title="信息体检登记">
+<!--姓名-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">姓名</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"   name='username' value='{{cardInfo.username}}' bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="名字" type="text"></input>
+        </view>
     </view>
-    <view class='name-input'>
-      <input type='text' name='username' value='{{cardInfo.username}}' placeholder='姓名' class='input-item' />
+    <view class='border-medical'>
+    <view class='border-line'></view>
     </view>
-    <view class='sex-item'>
-      <radio-group class="radio-group" name='sex' bindchange="sexRadiochange">
-        <label class="radio-sex">
-          <radio value="1" checked="{{cardInfo.sex === '1' ? 'true' : ''}}">男</radio>
-          <radio value="0" checked="{{cardInfo.sex === '0' ? 'true' : ''}}">女</radio>
-        </label>
-      </radio-group>
+
+    <!--性别-->
+    <view>
+      <view class=".i-cell-radio i-input">
+        <view class="i-cell-hd i-input-title">性别</view>
+        <!-- radiogroup 布局 -->
+          <radio-group class="item-right radio-group"  name='sex'>
+            <label class="radio" wx:for='{{sex}}'>
+               <radio value="{{item.number}}" checked="{{cardInfo.sex === item.number ? 'true' : ''}}"/>{{item.name}}　
+            </label>
+          </radio-group>
+        </view>
     </view>
-    <view class='name-input'>
-      <input type='text' class='input-item' name='idcard' value='{{cardInfo.identitycard}}' placeholder='身份证' />
+    <view class='border-medical'>
+    <view class='border-line'></view>
     </view>
-    <view class='sex-item'>
-      <radio-group class="radio-group" name='maritalstatus' bindchange="maRadioChange">
-        <label class="radio-sex">
-          <radio value="1" checked="{{cardInfo.maritalstatus === '1' ? 'true' : ''}}">已婚</radio>
-          <radio value="0" checked="{{cardInfo.maritalstatus === '0' ? 'true' : ''}}">未婚</radio>
-        </label>
-      </radio-group>
+
+    <!--身份证-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">身份证</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='idcard' value='{{cardInfo.identitycard}}'bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入身份证" type="text"></input>
+        </view>
     </view>
-    <view class='name-input'>
-      <input type='text' class='input-item' name='tel' value='{{cardInfo.phobenumber}}' placeholder='联系方式' />
+    <view class='border-medical'>
+    <view class='border-line'></view>
     </view>
-    <view class='name-input'>
-      <input type='text' class='input-item' name='sendaddress' value='{{cardInfo.sendaddress}}' placeholder='体检报告寄送地址' />
-      </view>
-        <button form-type="submit">确定</button>
-  </form>
-  </view>
+
+
+
+    <!--婚姻状况-->
+    <view>
+      <view class=".i-cell-radio i-input">
+        <view class="i-cell-hd i-input-title">婚姻状况</view>
+        <!-- radiogroup 布局 -->
+          <radio-group class="item-right radio-group" name='maritalstatus' >
+            <label class="radio" wx:for="{{marriage}}">
+               <radio value="{{item.number}}" checked="{{cardInfo.maritalstatus === item.number ? 'true' : ''}}"/>{{item.name}}　
+            </label>
+          </radio-group>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+    
+     <!--联系电话-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">联系电话</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='tel' value='{{cardInfo.phobenumber}}' bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入手机号" type="number"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+  <!--详细地址-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">详细地址</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" name='sendaddress' value='{{cardInfo.sendaddress}}'bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入体检报告收货详细地址" type="textarea"  maxlength="50"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+
+</i-panel>
+
+ <view class="loginBtnView"> 
+  <button class="Medical-loginBtn" form-type="submit">提交</button> 
+ </view>
+
+</form>
+</view>

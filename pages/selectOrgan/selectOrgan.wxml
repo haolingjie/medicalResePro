@@ -1,4 +1,4 @@
-<view class="sure-page">
+<view class="containerr">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class='areaSelectView'>
       <text class='areaSelect'>
@@ -6,7 +6,10 @@
     </text>
     </view>
   </picker>
-  <view class="">
+  <view class='jigou'>
+    <label>可选机构</label>
+  </view>
+  <view class="joje">
     <radio-group class="" bindchange="radioChange">
       <view class="radioView" wx:for="{{medicalCenterVOs}}">
         <view class='leftView'>
@@ -23,7 +26,8 @@
       </view>
     </radio-group>
   </view>
-  <button bindtap='selectOrganDate'>确定</button>
+  <button bindtap='selectOrganDate' class="Medical-loginBtn">确定</button>
+  
   <loading hidden="{{loadingHidden}}">
     加载中...
   </loading>

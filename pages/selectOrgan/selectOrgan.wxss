@@ -62,25 +62,14 @@
   width: 90%; */
 }
 
-.rightView {
-  /* float: left;
-  width: 10%;
-  height: 100%; */
-}
 
-.sure-page {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 32px;
-}
 
 text {
   font-size: 30rpx;
 }
 
 .radioView {
- border-bottom: 1rpx solid #1976BB;
- margin-top: 1rem; 
+ border-bottom: 1rpx solid #e9eaec;
  display: flex;
 }
 
@@ -114,17 +103,67 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 .areaSelect{
   text-align: center;
 }
-.areaSelectView, .radioView{
+.radioView{
+  position: relative;
+  padding: 7px 15px;
   display: flex;
+  background: #fff;
   align-items: center;
-  justify-content: center;
+  line-height: 1.4;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.areaSelectView{
+  position: relative;
+  padding: 5px 8px 15px 15px;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  line-height: 1.4;
+  font-size: 14px;
+  overflow: hidden;
 }
 .areaSelectView {
   justify-content: flex-start;
 }
-.radioView {
-  padding-bottom: 10rpx;
-}
+
 button{
   margin-top: 1rem; 
+}
+.jigou{
+  padding: 7px 15px;
+}
+label{
+  font-size: 30rpx;
+}
+.Medical-loginBtn{
+  width: 90%;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #008CD4;
+}
+
+/* 自定义 radio 样式 */
+radio{
+    width: 38rpx;
+}
+ 
+radio .wx-radio-input{
+    border-radius: 50%; 
+    width: 28rpx;
+    height: 28rpx;
+}
+ 
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 45rpx; 
+    height: 45rpx; 
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 26rpx; /* 对勾大小 26rpx */
+    color:#fff; /* 对勾颜色 */
+    background: #2facff;
+    border-color: #2facff;
 }

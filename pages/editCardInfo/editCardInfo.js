@@ -1,6 +1,6 @@
 // pages/editCardInfo/editCardInfo.js
-import WxValidate from '../../assets/plugins/wx-validate/WxValidate'
-var utils = require('../../utils/util.js')
+import WxValidate from "../../assets/plugins/wx-validate/WxValidate";
+var utils = require("../../utils/util.js")
 
 Page({
 
@@ -8,18 +8,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    sex: [
+      { name: '男' ,number:'1',},
+      { name: '女' , number: '0', }
+    ],
+    marriage: [
+      { name: '已婚', number: '1',},
+      { name: '未婚', number: '0',}
+    ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
     var cardList = JSON.parse(options.cardList);
     var openId = options.openId;
     this.setData({
-      cardInfo:cardList[0],
-      openId: openId,
+      cardInfo: cardList[0],
+      openId,
     });
     this.initValidate();
   },
@@ -82,8 +90,8 @@ Page({
       ['cardInfo.maritalstatus']: e.detail.value
     });
   },
-  editCardInfoSubmit: function(param){
-    var cardInfo=this.data.cardInfo;
+  editCardInfoSubmit: function (param) {
+    var cardInfo = this.data.cardInfo;
     wx.request({
       data: {
         'cardcode': param.cardcode,
@@ -101,11 +109,11 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
-        if(res.data.code == 0){
+        if (res.data.code == 0) {
           wx.navigateTo({
             url: "../setMeal/setMeal?cardInfo=" + JSON.stringify(cardInfo)
           })
-        }else{
+        } else {
           wx.showToast({
             title: res.data.msg,
             icon: 'none',

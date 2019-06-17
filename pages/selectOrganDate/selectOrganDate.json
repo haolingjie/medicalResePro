@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "确认预约",
   "navigationBarTextStyle": "black",
-  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarBackgroundColor": "#F7F7F8",
     "usingComponents": {
       "calendar": "plugin://calendar/calendar"
     }

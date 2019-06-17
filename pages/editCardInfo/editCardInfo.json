@@ -1,5 +1,8 @@
 {
+  "usingComponents": {
+    "i-input": "../../dist/input/index"
+  },
   "navigationBarTitleText": "信息体检登记",
   "navigationBarTextStyle": "black",
-  "navigationBarBackgroundColor": "#ffffff"
+  "navigationBarBackgroundColor": "#F7F7F8"
 }
