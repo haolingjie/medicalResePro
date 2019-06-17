@@ -82,7 +82,6 @@ Page({
     })
   },
   loginSubmit: function(e) {
-    console.log(e.detail.value.idCard);
     wx.request({
       data:{
         'cardCode': e.detail.value.idCard,
@@ -95,8 +94,8 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function(res) {
-        var cardInfo = res.data.cardList[0];
         if(res.data.code == 0){
+          var cardInfo = res.data.cardList[0];
           //0：未激活
           if (cardInfo.cardstatus == '0' || cardInfo.cardstatus == '4'){
             //发送消息给后台
