@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/editCardInfo-two/editCardInfo-two",
-    "pages/browsingCardInfo/browsingCardInfo",
     "pages/index/index",
+    "pages/browsingCardInfo/browsingCardInfo",
     "pages/selectOrganDate/selectOrganDate",
     "pages/selectOrgan/selectOrgan",
     "pages/editCardInfo/editCardInfo",
     "pages/cardInfo/cardInfo",
+    "pages/setMeal/setMeal",
     "pages/logs/logs",
     "pages/idLogin/idLogin"
   ],

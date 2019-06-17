@@ -9,13 +9,13 @@
  <view class="inputView"> 
  <image class="keyImage" src="../../assets/images/name.png"></image> 
   <label class="loginLab">账号</label> 
-  <input type='text'  class="inputText" value='A10001366' name='idCard' placeholder="请输入卡号"  /> 
+  <input type='text'  class="inputText" value='E10002059' name='idCard' placeholder="请输入卡号"  /> 
 </view>
 <!--密码-->
 <view class="inputView"> 
   <image class="keyImage" src="../../assets/images/key.png"></image> 
   <label class="loginLab">密码</label> 
-  <input type='password' name='password' value='XfQpAqP2' class="inputText" placeholder="请输入密码"  /> 
+  <input type='password' name='password' value='fbrn4c2U' class="inputText" placeholder="请输入密码"  /> 
  </view> 
  <!--按钮-->
  <view class="loginBtnView"> 
