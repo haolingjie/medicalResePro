@@ -105,7 +105,7 @@ Page({
         'sendaddress': param.sendaddress,
         'phobenumber': param.tel
       },
-      url: 'http://localhost:8080/api/wechat/editCardInfo',
+      url: 'https://www.tuozai.club/api/wechat/editCardInfo',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'

@@ -1,4 +1,3 @@
-
 // pages/browsingCardInfo/browsingCardInfo.js
 var that;
 Page({
@@ -7,21 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sex: [
-      { name: '男', checked: true },
-      { name: '女', checked: false }
-    ],
-    marriage: [
-      { name: '已婚', checked: true },
-      { name: '未婚', checked: false }
-    ],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    that = this;
+    that=this;
     wx.request({
       data: {
         'cardcode': options.cardcode,

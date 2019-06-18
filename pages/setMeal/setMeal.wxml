@@ -11,6 +11,6 @@
     <radio value="{{item}}" checked="{{item.checked}}"/>{{item}}套餐
   </label>
 </radio-group> -->
-<view data-url="http://localhost/20190427-医疗预约卡信息." data-type="excel" catchtap='downloadFile'></view>
+<view data-url="{{excelUrl}}" data-type="excel" catchtap='downloadFile'></view>
 <button bindtap='selectOrgan' class='Medical-loginBtn'>确定</button>
 </view>

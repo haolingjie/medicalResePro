@@ -2403,7 +2403,7 @@ Page({
     });
     wx.request({
       data: {},
-      url: 'http://localhost:8080/api/wechat/selectOrganArea',
+      url: 'https://www.tuozai.club/api/wechat/selectOrganArea',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
@@ -2450,7 +2450,7 @@ Page({
             citycode: areacodeList[0].citycode,
             areacode: areacodeList[0].areacode
           },
-          url: 'http://localhost:8080/api/wechat/selectOrgan',
+          url: 'https://www.tuozai.club/api/wechat/selectOrgan',
           method: 'POST',
           header: {
             'Content-Type': 'application/json'
@@ -2496,7 +2496,7 @@ Page({
         citycode: that.data.areacodeList[that.data.multiIndex[1]].citycode,
         areacode: that.data.areacodeList[that.data.multiIndex[1]].areacode
       },
-      url: 'http://localhost:8080/api/wechat/selectOrgan',
+      url: 'https://www.tuozai.club/api/wechat/selectOrgan',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'

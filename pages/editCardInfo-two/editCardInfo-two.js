@@ -51,7 +51,7 @@ Page({
           data: {
             'code': res.code,
           },
-          url: 'http://localhost:8080/api/wechat/wxLogin',
+          url: 'https://www.tuozai.club/api/wechat/wxLogin',
           method: 'GET',
           header: {
             'Content-Type': 'application/json'
@@ -89,7 +89,7 @@ Page({
         'passWord': e.detail.value.password,
         'loginMethod': '1',
       },
-      url: 'http://localhost:8080/api/wechat/login',
+      url: 'https://www.tuozai.club/api/wechat/login',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'

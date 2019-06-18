@@ -31,7 +31,7 @@ Page({
         'cardcode': options.cardcode,
         'medicalcode': options.medicalcode
       },
-      url: 'http://localhost:8080/api/wechat/selectOrganDate',
+      url: 'https://www.tuozai.club/api/wechat/selectOrganDate',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
@@ -143,7 +143,7 @@ Page({
         'medicalcode': that.data.medicalCenterVO.id,
         'formIds': formIds,
       },
-      url: 'http://localhost:8080/api/wechat/reservationSubmit',
+      url: 'https://www.tuozai.club/api/wechat/reservationSubmit',
       method: 'POST',
       header: {
         'Content-Type': 'application/json'

@@ -1,14 +1,13 @@
 // pages/setMeal/setMeal.js
 var that;
+var excelUrl="";
+
 Page({
   
   /**
    * 页面的初始数据
    */
   data: {
-    position: 'left',
-    checked: false,
-    disabled: false,
   },
   handleFruitChange({ detail = {} }) {
     this.setData({
@@ -43,16 +42,37 @@ Page({
     that = this;
     wx.request({
       data: JSON.stringify(cardInfo),
-      url: 'http://localhost:8080/api/wechat/getTongCardStlyle',
+      url: 'https://www.tuozai.club/api/wechat/getTongCardStlyle',
       method: 'Post',
       header: {
         'Content-Type': 'application/json'
       },
       success: function (res) {
-        if (res.data.code == '0') {
+        if(res.data.code == '0'){
+          if (res.data.tongCardStlyleList.length == 0){
+            excelUrl = "https://www.tuozai.club/statics/" + cardInfo.cardcode.substring(0, 1) +"_setMeal.xlsx";
+            wx.downloadFile({
+              url: excelUrl,
+              success: function (res) {
+                console.log(res)
+                var Path = res.tempFilePath
+  //返回的文件临时地址，用于后面打开本地预览所用
+                wx.openDocument({
+                  filePath: Path,
+                  success: function (res) {
+                    console.log('打开成功');
+                  }
+                })
+              },
+              fail: function (res) {
+                console.log(res);
+              }
+            })
+          }
           that.setData({
             // openId: res.data.openid,
-            tongCardStlyleList: res.data.tongCardStlyleList
+            tongCardStlyleList: res.data.tongCardStlyleList,
+            excelUrl: excelUrl
           });
         }
       },
