@@ -1,9 +1,9 @@
 // pages/setMeal/setMeal.js
 var that;
-var excelUrl="";
+var excelUrl = "";
 
 Page({
-  
+
   /**
    * 页面的初始数据
    */
@@ -48,15 +48,15 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
-        if(res.data.code == '0'){
-          if (res.data.tongCardStlyleList.length == 0){
-            excelUrl = "https://www.tuozai.club/statics/" + cardInfo.cardcode.substring(0, 1) +"_setMeal.xlsx";
+        if (res.data.code == '0') {
+          if (res.data.tongCardStlyleList.length == 0) {
+            excelUrl = "https://www.tuozai.club/statics/" + cardInfo.cardcode.substring(0, 1) + "_setMeal.xlsx";
             wx.downloadFile({
               url: excelUrl,
               success: function (res) {
                 console.log(res)
                 var Path = res.tempFilePath
-  //返回的文件临时地址，用于后面打开本地预览所用
+                //返回的文件临时地址，用于后面打开本地预览所用
                 wx.openDocument({
                   filePath: Path,
                   success: function (res) {
