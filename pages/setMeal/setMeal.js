@@ -6,22 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fruit: [{
-      id: 1,
-      name: '香蕉',
-    }, {
-      id: 2,
-      name: '苹果'
-    }, {
-      id: 3,
-      name: '西瓜'
-    }, {
-      id: 4,
-      name: '葡萄',
-    }],
-    current: '苹果',
     position: 'left',
-    animal: '熊猫',
     checked: false,
     disabled: false,
   },
