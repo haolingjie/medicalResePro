@@ -2398,7 +2398,8 @@ Page({
   onLoad: function(options) {
     that = this;
     that.setData({
-      cardCode: options.cardCode
+      cardCode: options.cardCode,
+      loginMethod: options.loginMethod
     });
     wx.request({
       data: {},
@@ -2550,7 +2551,7 @@ Page({
       return false
     }
     wx.navigateTo({
-      url: '../selectOrganDate/selectOrganDate?cardcode=' + that.data.cardCode + "&medicalcode=" + that.data.medicalCenterId,
+      url: '../selectOrganDate/selectOrganDate?cardcode=' + that.data.cardCode + "&medicalcode=" + that.data.medicalCenterId + "&loginMethod=" + that.data.loginMethod,
     })
   },
   showLoading: function() {

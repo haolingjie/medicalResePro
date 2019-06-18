@@ -6,7 +6,9 @@
   display: inline-block;
   vertical-align: middle;
 }
-
+.border-bottom{
+  height: 20px;
+}
 .label-1__icon {
   position: relative;
   margin-right: 10rpx;

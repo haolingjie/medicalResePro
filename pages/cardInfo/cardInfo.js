@@ -15,7 +15,8 @@ Page({
   onLoad: function(options) {
     var cardList = JSON.parse(options.cardList);
     this.setData({
-      cardInfo: cardList
+      cardInfo: cardList,
+      loginMethod: options.loginMethod
     });
     that=this;
   },
@@ -96,12 +97,12 @@ Page({
         }
       }
       wx.navigateTo({
-        url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(cardInfo)
+        url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(cardInfo) + "&loginMethod=" + that.data.loginMethod,
       });
       //2已预购
     } else if (cardstatus == '2') {
       wx.navigateTo({
-        url: '../browsingCardInfo-two/browsingCardInfo-two?cardcode=' + cardcode + "&medicalcode=" + '',
+        url: '../browsingCardInfo-two/browsingCardInfo-two?cardcode=' + cardcode + "&medicalcode=" + ''+"&loginMethod=" + that.data.loginMethod,
       });
       //3已到检
     } else if (cardstatus == '3') {

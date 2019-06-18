@@ -27,7 +27,8 @@
     </radio-group>
   </view>
   <button bindtap='selectOrganDate' class="Medical-loginBtn">确定</button>
-  
+   <view class='border-bottom'>
+  </view>
   <loading hidden="{{loadingHidden}}">
     加载中...
   </loading>

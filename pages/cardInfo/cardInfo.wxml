@@ -35,5 +35,4 @@
       </view>
     </view>
   </block>
-  <button bindtap='gotoLogin'>确定</button>
 </view>

@@ -15,32 +15,10 @@ Page({
   onLoad: function (options) {
     var cardInfo = JSON.parse(options.cardInfo);
     this.setData({
-      cardInfo: cardInfo
+      cardInfo: cardInfo,
+      loginMethod: options.loginMethod
     });
-    that=this;
-    wx.request({
-      data: JSON.stringify(cardInfo),
-      url: 'http://localhost:8080/api/wechat/getTongCardStlyle',
-      method: 'Post',
-      header: {
-        'Content-Type': 'application/json'
-      },
-      success: function (res) {
-        if(res.data.code == '0'){
-        that.setData({
-          // openId: res.data.openid,
-          tongCardStlyleList: res.data.tongCardStlyleList
-        });
-        }
-      },
-      fail: function (res) {
-        wx.showToast({
-          title: '系统错误',
-          icon: 'none',
-          duration: 2000
-        });
-      },
-    })
+    that = this;
   },
 
   /**
@@ -92,10 +70,8 @@ Page({
   },
   selectOrgan: function () {
     wx.navigateTo({
-      url: '../selectOrgan/selectOrgan?cardCode=' + this.data.cardInfo.cardcode
+      url: '../selectOrgan/selectOrgan?cardCode=' + this.data.cardInfo.cardcode + "&loginMethod=" + that.data.loginMethod,
     })
-  },radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
   }
   // },
   // downloadFile: function (e) {

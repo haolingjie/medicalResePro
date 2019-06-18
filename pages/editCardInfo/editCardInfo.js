@@ -1,7 +1,7 @@
 // pages/editCardInfo/editCardInfo.js
 import WxValidate from "../../assets/plugins/wx-validate/WxValidate";
 var utils = require("../../utils/util.js")
-
+var that;
 Page({
 
   /**
@@ -28,8 +28,10 @@ Page({
     this.setData({
       cardInfo: cardList[0],
       openId,
+      loginMethod: options.loginMethod
     });
     this.initValidate();
+    that = this;
   },
 
   /**
@@ -111,7 +113,7 @@ Page({
       success: function (res) {
         if (res.data.code == 0) {
           wx.navigateTo({
-            url: "../setMeal/setMeal?cardInfo=" + JSON.stringify(cardInfo)
+            url: "../setMeal/setMeal?cardInfo=" + JSON.stringify(cardInfo) + "&loginMethod=" + that.data.loginMethod,
           })
         } else {
           wx.showToast({

@@ -111,7 +111,7 @@ Page({
       success: function (res) {
         if (res.data.code =='0'){
           wx.navigateTo({
-            url: "../cardInfo/cardInfo?cardList=" + JSON.stringify(res.data.cardList) + "&openId=" +that.data.openId,
+            url: "../cardInfo/cardInfo?cardList=" + JSON.stringify(res.data.cardList) + "&loginMethod=2" + "&openId=" +that.data.openId,
           });
         }else {
           wx.showToast({

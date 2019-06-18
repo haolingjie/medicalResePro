@@ -50,6 +50,7 @@ Page({
           endDate: res.data.endDate,
           selectOrageDates: selectOrageDates,
           allOrageDates: res.data.allOrageDates,
+          loginMethod: options.loginMethod
         });
       },
       fail: function (res) {

@@ -36,7 +36,8 @@
       <view class="i-cell i-input">
         <view class="i-cell-hd i-input-title">身份证</view>
         <!-- radiogroup 布局 -->
-          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='idcard' value='{{cardInfo.identitycard}}'bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入身份证" type="text"></input>
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='idcard' value='{{cardInfo.identitycard}}'bindfocus="handleInputFocus" 
+           disabled="{{loginMethod === '2' ? 'true' : ''}}" bindinput="handleInputChange" placeholder="请输入身份证" type="text"></input>
         </view>
     </view>
     <view class='border-medical'>
@@ -67,7 +68,8 @@
       <view class="i-cell i-input">
         <view class="i-cell-hd i-input-title">体检机构</view>
         <!-- radiogroup 布局 -->
-          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='tel' value='{{medicalCenterVO.medicalecentername}}' bindfocus="handleInputFocus" bindinput="handleInputChange" disabled="true " type="number"></input>
+          <!-- <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='tel' value='{{medicalCenterVO.medicalecentername}}' bindfocus="handleInputFocus" bindinput="handleInputChange" disabled="true " type="number"></input> -->
+<text  name='tel'  class="i-input-input i-cell-bd">{{medicalCenterVO.medicalecentername}}</text>
         </view>
     </view>
     <view class='border-medical'>
@@ -79,7 +81,8 @@
       <view class="i-cell i-input">
         <view class="i-cell-hd i-input-title">体检地点</view>
         <!-- radiogroup 布局 -->
-          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='tel' value='{{medicalCenterVO.medicalecenteraddress}}' bindfocus="handleInputFocus" bindinput="handleInputChange" disabled="true " type="number"></input>
+          <!-- <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"  name='tel' value='{{medicalCenterVO.medicalecenteraddress}}' bindfocus="handleInputFocus" bindinput="handleInputChange" disabled="true " type="number"></input> -->
+          <text  name='tel'  class="i-input-input i-cell-bd">{{medicalCenterVO.medicalecenteraddress}}</text>
         </view>
     </view>
     <view class='border-medical'>
