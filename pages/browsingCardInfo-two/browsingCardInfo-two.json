@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-input": "../../dist/input/index"
+  },
+  "navigationBarTitleText": "预约信息",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F7F7F8"
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-input": "../../dist/input/index"
+  },
+  "navigationBarTitleText": "医疗卡、密码登陆",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#F7F7F8"
+}

@@ -1,0 +1,43 @@
+<view  class='make-top'>
+<label class='make-title'>请登记</label> 
+</view>
+<view class="containerr">
+
+  <form bindsubmit='submitForm' report-submit='true' class='make-from'>
+   <view class="inputView"> 
+  <label class="loginLab">账号</label> 
+  <input type='text'  class="inputText"  name='idCard' placeholder="请输入卡号"    /> 
+  </view>
+ <view class='inputView'>
+ <text class="loginLab">性别</text> 
+      <radio-group class="radio-group" name='sex' bindchange="sexRadiochange">
+        <label class="radio-sex">
+          <radio value="1" checked="{{cardInfo.sex === '1' ? 'true' : ''}}">男</radio>
+          <radio value="0" checked="{{cardInfo.sex === '0' ? 'true' : ''}}">女</radio>
+        </label>
+      </radio-group>
+    </view>
+  <view class="inputView"> 
+  <label class="loginLab">身份证</label> 
+  <input type='text'  class="inputText"  name='idCard' placeholder="请输入身份证"    /> 
+  </view>
+  <view class='inputView'>
+  <label class="loginLab">婚姻状况</label> 
+      <radio-group class="radio-group" name='maritalstatus' bindchange="maRadioChange">
+        <label class="radio-sex">
+          <radio value="1" checked="{{cardInfo.maritalstatus === '1' ? 'true' : ''}}">已婚</radio>
+          <radio value="0" checked="{{cardInfo.maritalstatus === '0' ? 'true' : ''}}">未婚</radio>
+        </label>
+      </radio-group>
+    </view>
+  <view class="inputView"> 
+  <label class="loginLab">联系方式</label> 
+  <input type='number'  class="inputText"   placeholder="请输入联系方式"    /> 
+  </view>
+  <view class="inputView"> 
+  <label class="loginLab">体检报告寄送地址</label> 
+  <input type='textarea'  class="inputText"   placeholder="请输入联系方式"    /> 
+  </view>
+  <button form-type="submit">确定</button>
+  </form>
+</view>

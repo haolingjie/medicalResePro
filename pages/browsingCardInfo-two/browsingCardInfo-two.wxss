@@ -1,0 +1,93 @@
+.Medical-loginBtn{
+  width: 90%;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #008CD4;
+}
+.containerr{
+  background-color: #fff;
+}
+
+.input-hideen{
+  display:none;
+}
+.border-medical{
+  height: 1px;
+  padding: 0px 15px;
+  background-color: #fff;
+}
+.border-line{
+  height: 1px;
+ background: #e9eaec;
+}
+.i-input {
+  padding: 7px 15px;
+  color: #495060;
+}
+.i-cell {
+  position: relative;
+  padding: 7px 15px;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  line-height: 1.4;
+  font-size: 14px;
+  overflow: hidden;
+}
+.i-input-title {
+  color: #495060;
+  min-width: 65px;
+  padding-right: 10px;
+  width: 50px;
+}
+
+
+
+/* 自定义 radio 样式 */
+radio{
+    width: 38rpx;
+}
+ 
+radio .wx-radio-input{
+    border-radius: 50%; 
+    width: 28rpx;
+    height: 28rpx;
+}
+ 
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 45rpx; 
+    height: 45rpx; 
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 26rpx; /* 对勾大小 26rpx */
+    color:#fff; /* 对勾颜色 */
+    background: #2facff;
+    border-color: #2facff;
+}
+.i-input-input {
+  flex: 1;
+  line-height: 1.6;
+  padding: 4px 0;
+  min-height: 22px;
+  height: auto;
+  font-size: 14px;
+}
+.i-cell-radio {
+  position: relative;
+padding: 12px 15px;
+display: flex;
+background: #fff;
+align-items: center;
+line-height: 1.4;
+font-size: 14px;
+overflow: hidden;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+<!--index.wxml-->
+<view class="containerr">
+
+<input type='text' hidden name='cardcode' value='{{cardInfo.cardcode}}' />
+<i-panel title="信息体检登记">
+<!--姓名-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">姓名</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{cardInfo.username}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+    <!--性别-->
+    <view>
+      <view class=".i-cell i-input">
+        <view class="i-cell-hd i-input-title">性别</view>
+        <!-- <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='女' disabled="disabled"></input> -->
+        <text class="input-item" wx:if="{{cardInfo.sex === '1'}}">男</text>
+    <text class="input-item" wx:else>女 </text>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+    <!--身份证-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">身份证</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{cardInfo.identitycard}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+
+
+    <!--婚姻状况-->
+    <view>
+      <view class=".i-cell i-input">
+        <view class="i-cell-hd i-input-title">婚姻状况</view>
+        <!-- radiogroup 布局 -->
+          <!-- <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='婚姻状况' disabled="disabled"></input> -->
+          <text class="input-item" wx:if="{{cardInfo.maritalstatus === '1'}}">已婚</text>
+    <text class="input-item" wx:else>未婚</text>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+
+    <!--体检机构-->
+    <view>
+      <view class=".i-cell i-input">
+        <view class="i-cell-hd i-input-title">体检机构</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{medicalCenterVO.medicalecentername}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+    
+
+
+    <!--体检地点-->
+    <view>
+      <view class=".i-cell i-input">
+        <view class="i-cell-hd i-input-title">体检地点</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{medicalCenterVO.medicalecenteraddress}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+    
+
+ <!--体检日期-->
+    <view>
+      <view class=".i-cell i-input">
+        <view class="i-cell-hd i-input-title">体检日期</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{cardInfo.medicaldateStr}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+    
+     <!--联系方式-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">联系方式</view>
+        <!-- radiogroup 布局 -->
+         <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{cardInfo.phobenumber}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+  <!--体检报告寄送地址-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">体检报告寄送地址</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{cardInfo.sendaddress}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
+
+</i-panel>
+
+ <!-- <view class="loginBtnView"> 
+  <button class="Medical-loginBtn" form-type="submit">提交</button> 
+ </view> -->
+
+</view>
