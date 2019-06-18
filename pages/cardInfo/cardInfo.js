@@ -101,7 +101,7 @@ Page({
       //2已预购
     } else if (cardstatus == '2') {
       wx.navigateTo({
-        url: '../browsingCardInfo/browsingCardInfo?cardcode=' + cardcode + "&medicalcode=" + '',
+        url: '../browsingCardInfo-two/browsingCardInfo-two?cardcode=' + cardcode + "&medicalcode=" + '',
       });
       //3已到检
     } else if (cardstatus == '3') {

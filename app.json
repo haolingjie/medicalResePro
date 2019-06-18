@@ -1,17 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/browsingCardInfo/browsingCardInfo",
-    "pages/selectOrganDate/selectOrganDate",
-    "pages/browsingCardInfo-two/index",
-    "pages/browsingCardInfo/browsingCardInfo",
     "pages/editCardInfo/editCardInfo",
+    "pages/setMeal/setMeal",
     "pages/selectOrgan/selectOrgan",
+    "pages/selectOrganDate/selectOrganDate",
+    "pages/idLogin/idLogin",
     "pages/cardInfo/cardInfo",
-    "pages/setMeal/setMeal",
-    "pages/logs/logs",
-    "pages/setMeal/setMeal",
-    "pages/idLogin/idLogin"
+    "pages/browsingCardInfo-two/browsingCardInfo-two",
+    "pages/index-twi/index-twi",
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

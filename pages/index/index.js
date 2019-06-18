@@ -97,7 +97,7 @@ Page({
         if(res.data.code == 0){
           var cardInfo = res.data.cardList[0];
           //0：未激活
-          if (cardInfo.cardstatus == '0' || cardInfo.cardstatus == '4'){
+             if (cardInfo.cardstatus == '0' || cardInfo.cardstatus == '4'){
             //发送消息给后台
             wx.request({
               data: {
@@ -125,8 +125,8 @@ Page({
             });
             //2已预购
           } else if (cardInfo.cardstatus == '2') {
-            wx.navigateTo({
-              url: '../browsingCardInfo/browsingCardInfo?cardcode=' + cardInfo.cardcode + "&medicalcode=" + cardInfo.medicalcode,
+               wx.navigateTo({
+                 url: '../browsingCardInfo-two/browsingCardInfo-two?cardcode=' + cardInfo.cardcode + "&medicalcode=" + cardInfo.medicalcode,
             });
             //3已到检
           } else if (cardInfo.cardstatus == '3') {
