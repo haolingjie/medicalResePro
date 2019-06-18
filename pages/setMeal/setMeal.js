@@ -1,12 +1,49 @@
 // pages/setMeal/setMeal.js
 var that;
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
-
+    fruit: [{
+      id: 1,
+      name: '香蕉',
+    }, {
+      id: 2,
+      name: '苹果'
+    }, {
+      id: 3,
+      name: '西瓜'
+    }, {
+      id: 4,
+      name: '葡萄',
+    }],
+    current: '苹果',
+    position: 'left',
+    animal: '熊猫',
+    checked: false,
+    disabled: false,
+  },
+  handleFruitChange({ detail = {} }) {
+    this.setData({
+      current: detail.value
+    });
+  },
+  handleClick() {
+    this.setData({
+      position: this.data.position.indexOf('left') !== -1 ? 'right' : 'left',
+    });
+  },
+  handleDisabled() {
+    this.setData({
+      disabled: !this.data.disabled
+    });
+  },
+  handleAnimalChange({ detail = {} }) {
+    this.setData({
+      checked: detail.current
+    });
   },
 
   /**
@@ -19,6 +56,29 @@ Page({
       loginMethod: options.loginMethod
     });
     that = this;
+    wx.request({
+      data: JSON.stringify(cardInfo),
+      url: 'http://localhost:8080/api/wechat/getTongCardStlyle',
+      method: 'Post',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        if (res.data.code == '0') {
+          that.setData({
+            // openId: res.data.openid,
+            tongCardStlyleList: res.data.tongCardStlyleList
+          });
+        }
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '系统错误',
+          icon: 'none',
+          duration: 2000
+        });
+      },
+    })
   },
 
   /**
@@ -72,6 +132,8 @@ Page({
     wx.navigateTo({
       url: '../selectOrgan/selectOrgan?cardCode=' + this.data.cardInfo.cardcode + "&loginMethod=" + that.data.loginMethod,
     })
+  }, radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
   }
   // },
   // downloadFile: function (e) {

@@ -1,5 +1,8 @@
 {
-  
+  "usingComponents": {
+    "i-radio-group": "../../dist/radio-group/index",
+    "i-radio": "../../dist/radio/index"
+  },
   "navigationBarTitleText": "体检套餐",
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#F7F7F8"

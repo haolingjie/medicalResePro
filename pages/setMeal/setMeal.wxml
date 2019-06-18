@@ -1,10 +1,16 @@
 
-<view class='"sure-page"'>
-<radio-group class="radio-group" bindchange="radioChange">
+<view>
+<i-panel title="group-水果">
+    <i-radio-group current="{{current}}" bindchange="handleFruitChange">
+        <i-radio wx:for="{{tongCardStlyleList}}" position="{{position}}" checked="{{item.checked}}" wx:key="{{item.id}}" value="{{item}}套餐">
+        </i-radio>
+    </i-radio-group>
+</i-panel>
+<!-- <radio-group class="radio-group" bindchange="radioChange">
   <label class="radio" wx:for="{{tongCardStlyleList}}">
     <radio value="{{item}}" checked="{{item.checked}}"/>{{item}}套餐
   </label>
-</radio-group>
+</radio-group> -->
 <view data-url="http://localhost/20190427-医疗预约卡信息." data-type="excel" catchtap='downloadFile'></view>
 <button bindtap='selectOrgan' class='Medical-loginBtn'>确定</button>
 </view>
