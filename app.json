@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/browsingCardInfo-two/browsingCardInfo-two",
     "pages/index/index",
     "pages/editCardInfo/editCardInfo",
     "pages/setMeal/setMeal",
@@ -7,7 +8,6 @@
     "pages/selectOrganDate/selectOrganDate",
     "pages/idLogin/idLogin",
     "pages/cardInfo/cardInfo",
-    "pages/browsingCardInfo-two/browsingCardInfo-two",
     "pages/index-twi/index-twi",
     "pages/logs/logs"
   ],
