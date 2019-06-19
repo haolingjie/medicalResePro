@@ -26,6 +26,10 @@ Page({
   onLoad: function (options) {
     console.log(options)
     that =this;
+    that.setData({
+      setMeal: options.setMeal,
+      loginMethod: options.loginMethod
+    });
     wx.request({
       data: {
         'cardcode': options.cardcode,
@@ -51,7 +55,6 @@ Page({
           // endDate: res.data.endDate,
           selectOrageDates: selectOrageDates,
           allOrageDates: res.data.allOrageDates,
-          loginMethod: options.loginMethod
         });
       },
       fail: function (res) {
@@ -143,6 +146,7 @@ Page({
         'medicaldateStr': that.data.cardInfo.medicaldateStr,
         'medicaldate': e.detail.value.medicaldate,
         'medicalcode': that.data.medicalCenterVO.id,
+        'setMeal': that.data.setMeal,
         'formIds': formIds,
       },
       url: 'https://www.tuozai.club/api/wechat/reservationSubmit',

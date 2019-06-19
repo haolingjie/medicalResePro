@@ -10,9 +10,29 @@ Page({
   data: {
   },
   handleFruitChange({ detail = {} }) {
-    this.setData({
-      current: detail.value
+    var setMeal = detail.value.substring(0, 1);
+    that.setData({
+      current: detail.value,
+      setMeal: setMeal,
     });
+    excelUrl = "https://www.tuozai.club/taoCanExcel/" + setMeal+ "_setMeal.xlsx";
+    wx.downloadFile({
+      url: excelUrl,
+      success: function (res) {
+        console.log(res)
+        var Path = res.tempFilePath
+        //返回的文件临时地址，用于后面打开本地预览所用
+        wx.openDocument({
+          filePath: Path,
+          success: function (res) {
+            console.log('打开成功');
+          }
+        })
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    })
   },
   handleClick() {
     this.setData({
@@ -49,26 +69,10 @@ Page({
       },
       success: function (res) {
         if (res.data.code == '0') {
-          if (res.data.tongCardStlyleList.length == 0) {
-            excelUrl = "https://www.tuozai.club/statics/" + cardInfo.cardcode.substring(0, 1) + "_setMeal.xlsx";
-            wx.downloadFile({
-              url: excelUrl,
-              success: function (res) {
-                console.log(res)
-                var Path = res.tempFilePath
-                //返回的文件临时地址，用于后面打开本地预览所用
-                wx.openDocument({
-                  filePath: Path,
-                  success: function (res) {
-                    console.log('打开成功');
-                  }
-                })
-              },
-              fail: function (res) {
-                console.log(res);
-              }
-            })
-          }
+          // if (res.data.tongCardStlyleList.length == 0) {
+          //   excelUrl = "https://www.tuozai.club/taoCanExcel/" + cardInfo.cardcode.substring(0, 1) + "_setMeal.xlsx";
+           
+          // }
           that.setData({
             // openId: res.data.openid,
             tongCardStlyleList: res.data.tongCardStlyleList,
@@ -135,7 +139,7 @@ Page({
   },
   selectOrgan: function () {
     wx.navigateTo({
-      url: '../selectOrgan/selectOrgan?cardCode=' + this.data.cardInfo.cardcode + "&loginMethod=" + that.data.loginMethod,
+      url: '../selectOrgan/selectOrgan?cardCode=' + this.data.cardInfo.cardcode + "&loginMethod=" + that.data.loginMethod + "&setMeal=" + that.data.setMeal,
     })
   }, radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)

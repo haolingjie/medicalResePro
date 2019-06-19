@@ -3,6 +3,16 @@
   <view class='Corporatelogo'>
     <image class="Medical-logo" src="../../assets/images/appointment.jpg"></image> 
   </view>
+   <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称</button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> 
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
    <!--表单-->
   <form class='Medical-form' bindsubmit='loginSubmit' bindreset='fromReset' >
   <!--账号-->
@@ -19,12 +29,17 @@
  </view> 
  <!--按钮-->
  <view class="loginBtnView"> 
-  <button class="Medical-loginBtn" form-type="submit">提交</button> 
+  <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="Medical-loginBtn" form-type="submit">提交</button> 
+  <block wx:else>
+      <button  class="Medical-loginBtn" form-type="submit">提交</button> 
+  </block> -->
+     <button  class="Medical-loginBtn" form-type="submit">登录</button> 
  </view>
+
   </form>
   <!--标题切换-->
   <view class='login'>
-      <navigator class='cardLogin' url="../index/index">卡号登陆</navigator>
-      <navigator class='idLogin' url="../idLogin/idLogin">身份证登陆                 </navigator>
+      <navigator class='cardLogin' url="../index/index">卡号登录</navigator>
+      <navigator class='idLogin' url="../idLogin/idLogin">身份证登录                 </navigator>
   </view>
 </view>

@@ -19,12 +19,12 @@
  </view> 
  <!--按钮-->
  <view class="loginBtnView"> 
-  <button class="Medical-loginBtn" form-type="submit">提交</button> 
+  <button class="Medical-loginBtn" form-type="submit">登录</button> 
  </view>
   </form>
   <!--标题切换-->
   <view class='login'>
-      <navigator class='cardLogin' url="../index/index">卡号登陆</navigator>
-      <navigator class='idLogin' url="../idLogin/idLogin">身份证登陆                 </navigator>
+      <navigator class='cardLogin' url="../index/index">卡号登录</navigator>
+      <navigator class='idLogin' url="../idLogin/idLogin">身份证登录                 </navigator>
   </view>
 </view>

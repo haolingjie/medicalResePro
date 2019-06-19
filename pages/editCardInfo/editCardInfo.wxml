@@ -9,7 +9,8 @@
       <view class="i-cell i-input">
         <view class="i-cell-hd i-input-title">姓名</view>
         <!-- radiogroup 布局 -->
-          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"   name='username' value='{{cardInfo.username}}' bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="名字" type="text"></input>
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur"   name='username' value='{{cardInfo.username}}' bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="名字" type="text"
+            disabled="{{(cardInfo.modifyFlag === '2' || cardInfo.modifyFlag === '3') && cardInfo.username !='' ? 'true' : ''}}" ></input>
         </view>
     </view>
     <view class='border-medical'>
@@ -23,7 +24,8 @@
         <!-- radiogroup 布局 -->
           <radio-group class="item-right radio-group"  name='sex'>
             <label class="radio" wx:for='{{sex}}'>
-               <radio value="{{item.number}}" checked="{{cardInfo.sex === item.number ? 'true' : ''}}"/>{{item.name}}　
+               <radio value="{{item.number}}" checked="{{cardInfo.sex === item.number ? 'true' : ''}}"
+                disabled="{{(cardInfo.modifyFlag === '2' || cardInfo.modifyFlag === '3') ? 'true' : ''}}" />{{item.name}}　
             </label>
           </radio-group>
         </view>
@@ -80,7 +82,8 @@
       <view class="i-cell i-input">
         <view class="i-cell-hd i-input-title">详细地址</view>
         <!-- radiogroup 布局 -->
-          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" name='sendaddress' value='{{cardInfo.sendaddress}}'bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入体检报告收货详细地址" type="textarea"  maxlength="50"></input>
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" name='sendaddress' value='{{cardInfo.sendaddress}}'bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入体检报告收货详细地址" type="textarea"  maxlength="50"
+          disabled="{{(cardInfo.modifyFlag === '1' || cardInfo.modifyFlag === '3') ? 'true' : ''}}"></input>
         </view>
     </view>
     <view class='border-medical'>
