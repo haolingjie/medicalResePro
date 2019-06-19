@@ -121,6 +121,18 @@
     <view class='border-line'></view>
     </view>
 
+   <!--客服电话-->
+  <view>
+      <view class="i-cell i-input">
+        <view class="i-cell-hd i-input-title">客服电话</view>
+        <!-- radiogroup 布局 -->
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" bindfocus="handleInputFocus" bindinput="handleInputChange" type="text" value='{{cardInfo.phone}}' disabled="disabled"></input>
+        </view>
+    </view>
+    <view class='border-medical'>
+    <view class='border-line'></view>
+    </view>
+
 
 </i-panel>
 
