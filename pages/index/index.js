@@ -121,7 +121,7 @@ Page({
            //1：已激活 
           } else if (cardInfo.cardstatus == '1'){
             wx.navigateTo({
-              url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(res.data.cardList) + "&openId=" + that.data.openId,
+              url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(res.data.cardList) + "&loginMethod=0" + "&openId=" + that.data.openId,
             });
             //2已预购
           } else if (cardInfo.cardstatus == '2') {
