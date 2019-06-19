@@ -38,6 +38,7 @@ Page({
       },
       success: function (res) {
         var curCanDateList = res.data.curCanDateList;
+        selectOrageDates=[];
         for (var i = 0; i < curCanDateList.length; i++) {
           selectOrageDates.push({
             month: 'current', day: curCanDateList[i], color: 'black', background: ''
@@ -46,8 +47,8 @@ Page({
         that.setData({
           cardInfo: res.data.cardInfoVo,
           medicalCenterVO: res.data.medicalCenterVO,
-          startDate: res.data.startDate,
-          endDate: res.data.endDate,
+          // startDate: res.data.startDate,
+          // endDate: res.data.endDate,
           selectOrageDates: selectOrageDates,
           allOrageDates: res.data.allOrageDates,
           loginMethod: options.loginMethod
@@ -126,8 +127,9 @@ Page({
     utils.collectFormIds(formId); //保存推送码
     var formIds = app.globalData.globalFormIds; // 获取全局推送码
     if (formIds.length) {
-      formIds = JSON.stringify(formIds); // 转换成JSON字符串
+     // formIds = JSON.stringify(formIds); // 转换成JSON字符串
       app.globalData.gloabalFomIds = ''; // 清空当前全局推送码
+      console.log(formIds);
     }
     wx.request({
       data: {
@@ -283,7 +285,7 @@ Page({
     var dates="";
     var selectOrageDates=that.data.selectOrageDates;
     for (var i = 0; i < selectOrageDates.length; i++) {
-      if (event.detail.color == "#2facff"){
+      if (event.detail.color == "#4a4f74"){
         this.showModal("该日期不可选");
         return;
       }
@@ -305,6 +307,7 @@ Page({
     that.setData({
       selectOrageDates: selectOrageDates,
       dates: dates,
+      ['cardInfo.medicaldateStr']: dates,
     });
   },
   setSelectOrageDates: function (event){
@@ -320,5 +323,6 @@ Page({
     that.setData({
       selectOrageDates: selectOrageDates,
     });
+   
   }
 })
