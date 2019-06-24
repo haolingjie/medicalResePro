@@ -16,7 +16,8 @@ Page({
     var cardList = JSON.parse(options.cardList);
     this.setData({
       cardInfo: cardList,
-      loginMethod: options.loginMethod
+      loginMethod: options.loginMethod,
+      openId: options.openId
     });
     that=this;
   },
@@ -97,7 +98,7 @@ Page({
         }
       }
       wx.navigateTo({
-        url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(cardInfo) + "&loginMethod=" + that.data.loginMethod,
+        url: "../editCardInfo/editCardInfo?cardList=" + JSON.stringify(cardInfo) + "&loginMethod=" + that.data.loginMethod + "&openId=" + that.data.openId,
       });
       //2已预购
     } else if (cardstatus == '2') {

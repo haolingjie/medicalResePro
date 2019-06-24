@@ -27,7 +27,7 @@ Page({
     var openId = options.openId;
     this.setData({
       cardInfo: cardList[0],
-      openId,
+      openId: openId,
       loginMethod: options.loginMethod
     });
     this.initValidate();

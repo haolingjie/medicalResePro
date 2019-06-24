@@ -57,6 +57,7 @@ Page({
     var cardInfo = JSON.parse(options.cardInfo);
     this.setData({
       cardInfo: cardInfo,
+      setMeal: '',
       loginMethod: options.loginMethod
     });
     that = this;
@@ -138,6 +139,13 @@ Page({
   onShareAppMessage: function () {
   },
   selectOrgan: function () {
+    if (that.data.setMeal == ''){
+      wx.showModal({
+        content: "请选择套餐类型",
+        showCancel: false,
+      })
+      return;
+    }
     wx.navigateTo({
       url: '../selectOrgan/selectOrgan?cardCode=' + this.data.cardInfo.cardcode + "&loginMethod=" + that.data.loginMethod + "&setMeal=" + that.data.setMeal,
     })

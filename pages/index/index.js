@@ -103,6 +103,7 @@ Page({
               data: {
                 'cardcode': cardInfo.cardcode,
                 'cardstatus': cardInfo.cardstatus,
+                'openId': that.data.openId,
               },
               url: 'https://www.tuozai.club/api/wechat/activateCard',
               method: 'POST',

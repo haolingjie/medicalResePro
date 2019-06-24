@@ -32,7 +32,7 @@ Page({
           },
           success: function (res) {
             that.setData({
-              openId: res.data.openId,
+              openId: res.data.openid,
             });
           },
           fail: function (res) {

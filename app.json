@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/browsingCardInfo-two/browsingCardInfo-two",
     "pages/index/index",
+    "pages/browsingCardInfo-two/browsingCardInfo-two",
     "pages/editCardInfo/editCardInfo",
     "pages/setMeal/setMeal",
     "pages/selectOrgan/selectOrgan",
