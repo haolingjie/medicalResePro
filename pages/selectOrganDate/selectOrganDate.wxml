@@ -120,9 +120,9 @@
   <!--详细地址-->
   <view>
       <view class="i-cell i-input">
-        <view class="i-cell-hd i-input-title">详细地址</view>
+        <view class="i-cell-hd i-input-title">报告寄送地址</view>
         <!-- radiogroup 布局 -->
-          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" name='sendaddress' value='{{cardInfo.sendaddress}}'bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入体检报告收货详细地址" type="textarea"  maxlength="50"></input>
+          <input class="i-input-input i-cell-bd" bindblur="handleInputBlur" name='sendaddress' value='{{cardInfo.sendaddress}}'bindfocus="handleInputFocus" bindinput="handleInputChange" placeholder="请输入体检报告寄送地址" type="textarea"  maxlength="50"></input>
         </view>
     </view>
     <view class='border-medical'>

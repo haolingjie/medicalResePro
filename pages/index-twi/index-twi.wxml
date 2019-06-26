@@ -52,7 +52,7 @@
     <view class='border-line'></view>
     </view>
 
-    <i-input value="{{ value3 }}" type="textarea" title="详细地址" placeholder="请输入体检报告收货详细地址" maxlength="50" />
+    <i-input value="{{ value3 }}" type="textarea" title="报告寄送地址" placeholder="请输入体检报告寄送地址" maxlength="50" />
 
 
 
