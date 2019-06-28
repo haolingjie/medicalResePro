@@ -4,6 +4,7 @@ var that;
 const app = getApp();
 var utils = require('../../utils/util.js')
 var selectOrageDates=new Array;
+var noSelectOrageDates = new Array;
 Page({
 
   /**
@@ -43,10 +44,19 @@ Page({
       success: function (res) {
         var curCanDateList = res.data.curCanDateList;
         selectOrageDates=[];
+        noSelectOrageDates=[];
         for (var i = 0; i < curCanDateList.length; i++) {
           selectOrageDates.push({
             month: 'current', day: curCanDateList[i], color: 'black', background: ''
           });
+        }
+        var curRemoveDateList = res.data.curRemoveDateList;
+        if (curRemoveDateList != null && curRemoveDateList.length>0){
+          for (var i = 0; i < curRemoveDateList.length; i++) {
+            selectOrageDates.push({
+              month: 'current', day: curRemoveDateList[i], background: '#E0E0E0'
+          });
+        }
         }
         that.setData({
           cardInfo: res.data.cardInfoVo,
@@ -55,6 +65,7 @@ Page({
           // endDate: res.data.endDate,
           selectOrageDates: selectOrageDates,
           allOrageDates: res.data.allOrageDates,
+          allRemoveOrageDates: res.data.allRemoveOrageDates,
         });
       },
       fail: function (res) {
@@ -293,6 +304,10 @@ Page({
         this.showModal("该日期不可选");
         return;
       }
+      //去除上次选中的颜色
+      if (selectOrageDates[i].background == '#2facff' && event.detail.day != selectOrageDates[i].day) {
+        selectOrageDates[i].background = '';
+      }
       if (event.detail.day == selectOrageDates[i].day){
         selectOrageDates[i].background ='#2facff';
         var month = event.detail.month+"";
@@ -304,8 +319,6 @@ Page({
           day = "0" + day;
         }
         dates = event.detail.year + "-" + month + "-"+ day;
-      }else{
-        selectOrageDates[i].background = ''
       }
     }
     that.setData({
@@ -317,10 +330,18 @@ Page({
   setSelectOrageDates: function (event){
     selectOrageDates = [];
     var allOrageDates = that.data.allOrageDates;
+    var allRemoveOrageDates = that.data.allRemoveOrageDates;
     for (var i = 0; i < allOrageDates.length; i++) {
       if (event.detail.currentMonth == allOrageDates[i].month && event.detail.currentYear == allOrageDates[i].year)       {
         selectOrageDates.push({
           month: 'current', day: allOrageDates[i].day, color: 'black', background: '',
+        });
+      }
+    }
+    for (var i = 0; i < allRemoveOrageDates.length; i++) {
+      if (event.detail.currentMonth == allRemoveOrageDates[i].month && event.detail.currentYear == allRemoveOrageDates[i].year) {
+        selectOrageDates.push({
+          month: 'current', day: allRemoveOrageDates[i].day, background: '#E0E0E0',
         });
       }
     }
