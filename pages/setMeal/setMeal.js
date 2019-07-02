@@ -10,7 +10,7 @@ Page({
   data: {
   },
   handleFruitChange({ detail = {} }) {
-    var setMeal = detail.value.substring(0, 1);
+    var setMeal = detail.value.substring(0, detail.value.length-2);
     that.setData({
       current: detail.value,
       setMeal: setMeal,
@@ -71,7 +71,7 @@ Page({
       success: function (res) {
         if (res.data.code == '0') {
           // if (res.data.tongCardStlyleList.length == 0) {
-          //   excelUrl = "https://www.tuozai.club/taoCanExcel/" + cardInfo.cardcode.substring(0, 1) + "_setMeal.xlsx";
+          //   excelUrl = "https://www.tuozai.club/taoCanExcel/" + cardInfo.cardcode.substring(0, cardInfo.cardcode.length-8) + "_setMeal.xlsx";
            
           // }
           that.setData({
