@@ -169,7 +169,7 @@ Page({
         if (res.data.code == 0){
           wx.showModal({
             title: '提示',
-            content: '请耐心等待，系统将在 24H内以微信公众号提示形式发送给指定手机，系统可以随时登陆查看，系统可随时登陆查看',
+            content: '请耐心等待，系统将在24H内以微信公众号提示形式发送给指定手机，系统可以随时登陆查看',
             success: function (res) {
               if (res.confirm) {
                 wx.navigateTo({
