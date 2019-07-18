@@ -99,8 +99,8 @@ Page({
         'cardcode': param.cardcode,
         'username': param.username,
         'identitycard': param.idcard,
-        'sex': this.data.cardInfo.sex,
-        'maritalstatus': this.data.cardInfo.maritalstatus,
+        'sex': param.sex,
+        'maritalstatus': param.maritalstatus,
         'openId': this.data.openId,
         'sendaddress': param.sendaddress,
         'phobenumber': param.tel
