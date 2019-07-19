@@ -20,9 +20,9 @@
       <view class=".i-cell-radio i-input">
         <view class="i-cell-hd i-input-title">性别</view>
         <!-- radiogroup 布局 -->
-          <radio-group class="item-right radio-group"  name='sex'>
+          <radio-group class="item-right radio-group"  name='sex' bindchange="sexRadiochange">
             <label class="radio" wx:for='{{sex}}'>
-               <radio value="{{item.number}}" checked="{{cardInfo.sex === item.number ? 'true' : ''}}" name='sex' />{{item.name}}　
+               <radio value="{{item.number}}" checked="{{cardInfo.sex === item.number ? 'true' : ''}}" name='sex' />{{item.name}}
             </label>
           </radio-group>
         </view>
@@ -51,10 +51,10 @@
       <view class=".i-cell-radio i-input">
         <view class="i-cell-hd i-input-title">婚姻状况</view>
         <!-- radiogroup 布局 -->
-          <radio-group class="item-right radio-group" name='maritalstatus' >
+          <radio-group class="item-right radio-group" name='maritalstatus'  bindchange="maRadioChange">
             <label class="radio" wx:for="{{marriage}}">
                <radio value="{{item.number}}" checked="{{cardInfo.maritalstatus === item.number ? 'true' : ''}}" name='maritalstatus' />{{item.name}}　
-            </label>
+            </label> 
           </radio-group>
         </view>
     </view>
